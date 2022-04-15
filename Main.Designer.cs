@@ -79,6 +79,7 @@ namespace HRIS
             this.unitToolStripMenuItem.Name = "unitToolStripMenuItem";
             this.unitToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
             this.unitToolStripMenuItem.Text = "Unit";
+            this.unitToolStripMenuItem.Click += new System.EventHandler(this.unitToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 

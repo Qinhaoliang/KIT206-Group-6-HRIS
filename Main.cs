@@ -20,7 +20,8 @@ namespace HRIS
 
         private void ConsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Consultation consultation = new Consultation();
+            consultation.ShowDialog();
         }
 
         private void ClassToolStripMenuItem_Click(object sender, EventArgs e)
@@ -38,6 +39,12 @@ namespace HRIS
         {
             Staff staff = new Staff();
             staff.ShowDialog();
+        }
+
+        private void unitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Unit unit = new Unit();
+            unit.ShowDialog();
         }
     }
 }

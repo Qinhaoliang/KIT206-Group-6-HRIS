@@ -24,7 +24,6 @@ namespace HRIS
         {
             Add,
             Update,
-            Delete,
             Save,
             Cancel,
             None
@@ -61,7 +60,6 @@ namespace HRIS
                 case OPERATIONTYPE.Add:
                     addButton.Enabled = false;
                     modifyButton.Enabled = false;
-                    delButton.Enabled = false;
                     saveButton.Enabled = true;
                     cancelButton.Enabled = true;
                     picSelectButton.Enabled = true;
@@ -71,7 +69,6 @@ namespace HRIS
                 case OPERATIONTYPE.Update:
                     addButton.Enabled = false;
                     modifyButton.Enabled = false;
-                    delButton.Enabled = false;
                     saveButton.Enabled = true;
                     cancelButton.Enabled = true;
                     picSelectButton.Enabled = true;
@@ -86,14 +83,12 @@ namespace HRIS
                     emailTextBox.Enabled = false;
                     categoryTextBox.Enabled = false;
                     break;
-                case OPERATIONTYPE.Delete:
                 case OPERATIONTYPE.Save:
                 case OPERATIONTYPE.Cancel:
                 case OPERATIONTYPE.None:
                 default:
                     addButton.Enabled = true;
                     modifyButton.Enabled = true;
-                    delButton.Enabled = true;
                     saveButton.Enabled = false;
                     cancelButton.Enabled = false;
                     picSelectButton.Enabled = false;
@@ -185,7 +180,7 @@ namespace HRIS
             operationType = OPERATIONTYPE.Add;
             EnableButtons(operationType);
             ClearTextBoxes();
-            photoPictureBox.Image = Modules.ReadDefaultImage();
+            photoPictureBox.Image = null;
         }
 
         private void modifyButton_Click(object sender, EventArgs e)
@@ -227,9 +222,10 @@ namespace HRIS
                 mySqlCommand.ExecuteNonQuery();
                 mySqlCommand.Dispose();
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw;
+                MessageBox.Show(e.ToString());
+                //throw;
             }
         }
         private void cancelButton_Click(object sender, EventArgs e)
@@ -277,6 +273,41 @@ namespace HRIS
                     ((TextBox)control).Clear();
                 }
             }
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            if (f_nameTextBox.Text.Trim() == "" && g_nameTextBox.Text.Trim() == "")
+            {
+                UpdateDataSet();
+            }
+            else if(f_nameTextBox.Text.Trim() == "" && g_nameTextBox.Text.Trim() != "")
+            {
+                string sqlstr = "select * from staff where given_name = '"
+                                + g_nameTextBox.Text.Trim() + "'";
+                DataTable dataTable = mysqlDbHelper.GetDataTable(sqlstr, "staff");
+                dataGridView1.DataSource = dataTable.DefaultView;
+            }
+            else if (f_nameTextBox.Text.Trim() != "" && g_nameTextBox.Text.Trim() == "")
+            {
+                string sqlstr = "select * from staff where family_name = '"
+                                + f_nameTextBox.Text.Trim() + "'";
+                DataTable dataTable = mysqlDbHelper.GetDataTable(sqlstr, "staff");
+                dataGridView1.DataSource = dataTable.DefaultView;
+            }
+            else
+            {
+                string sqlstr = "select * from staff where family_name = '"
+                                + f_nameTextBox.Text.Trim() + "' and given_name = '"
+                                + g_nameTextBox.Text.Trim() + "'";
+                DataTable dataTable = mysqlDbHelper.GetDataTable(sqlstr, "staff");
+                dataGridView1.DataSource = dataTable.DefaultView;
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

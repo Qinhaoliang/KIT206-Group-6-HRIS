@@ -34,3 +34,5 @@ D:\job\HRIS\HRIS\obj\Debug\HRIS.Login.resources
 D:\job\HRIS\HRIS\obj\Debug\HRIS.Class1.resources
 D:\job\HRIS\HRIS\obj\Debug\HRIS.Main.resources
 D:\job\HRIS\HRIS\obj\Debug\HRIS.Staff.resources
+D:\job\HRIS\HRIS\obj\Debug\HRIS.Unit.resources
+D:\job\HRIS\HRIS\obj\Debug\HRIS.Consultation.resources

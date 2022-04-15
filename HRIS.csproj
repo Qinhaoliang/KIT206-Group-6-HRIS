@@ -89,6 +89,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consultation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultation.Designer.cs">
+      <DependentUpon>Consultation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,8 +128,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>testDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Unit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Unit.Designer.cs">
+      <DependentUpon>Unit.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Class1.resx">
       <DependentUpon>Class1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultation.resx">
+      <DependentUpon>Consultation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -142,6 +157,9 @@
     </Compile>
     <EmbeddedResource Include="Staff.resx">
       <DependentUpon>Staff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Unit.resx">
+      <DependentUpon>Unit.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
