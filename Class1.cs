@@ -32,11 +32,16 @@ namespace HRIS
 
         MysqlDbHelper mysqlDbHelper = new MysqlDbHelper();
 
+        private const string db = "hris";
+        private const string user = "kit206g20a";
+        private const string pass = "group20a";
+        private const string server = "alacritas.cis.utas.edu.au";
+
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: 这行代码将数据加载到表“testDataSet._class”中。您可以根据需要移动或删除它。
             //this.classTableAdapter.Fill(this.testDataSet._class);
-            mysqlDbHelper.Initialize("localhost", "test", "root", "123456");
+            mysqlDbHelper.Initialize(server, db, user, pass);
             mysqlDbHelper.OpenConnection();
             UpdateDataSet();
 

@@ -39,9 +39,14 @@ namespace HRIS
             this.Close();
         }
 
+        private const string db = "hris";
+        private const string user = "kit206g20a";
+        private const string pass = "group20a";
+        private const string server = "alacritas.cis.utas.edu.au";
+
         private void Consultation_Load(object sender, EventArgs e)
         {
-            mysqlDbHelper.Initialize("localhost", "test", "root", "123456");
+            mysqlDbHelper.Initialize(server, db, user, pass);
             mysqlDbHelper.OpenConnection();
             UpdateDataSet();
 
@@ -49,7 +54,7 @@ namespace HRIS
             dayComboBox.Items.Add("Tuesday");
             dayComboBox.Items.Add("Wednesday");
             dayComboBox.Items.Add("Thursday");
-            dayComboBox.Items.Add("Thursday");
+            dayComboBox.Items.Add("Friday");
             dayComboBox.Items.Add("Saturday");
             dayComboBox.Items.Add("Sunday");
             dayComboBox.SelectedIndex = 0;

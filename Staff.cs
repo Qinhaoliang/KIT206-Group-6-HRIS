@@ -32,9 +32,14 @@ namespace HRIS
 
         MysqlDbHelper mysqlDbHelper = new MysqlDbHelper();
 
+        private const string db = "hris";
+        private const string user = "kit206g20a";
+        private const string pass = "group20a";
+        private const string server = "alacritas.cis.utas.edu.au";
+
         private void Staff_Load(object sender, EventArgs e)
         {
-            mysqlDbHelper.Initialize("localhost", "test", "root", "123456");
+            mysqlDbHelper.Initialize(server, db, user, pass);
             mysqlDbHelper.OpenConnection();
             UpdateDataSet();
             mysqlDbHelper.CloseConnection();

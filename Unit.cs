@@ -27,9 +27,14 @@ namespace HRIS
             this.Close();
         }
 
+        private const string db = "hris";
+        private const string user = "kit206g20a";
+        private const string pass = "group20a";
+        private const string server = "alacritas.cis.utas.edu.au";
+
         private void Unit_Load(object sender, EventArgs e)
         {
-            mysqlDbHelper.Initialize("localhost", "test", "root", "123456");
+            mysqlDbHelper.Initialize(server, db, user, pass);
             mysqlDbHelper.OpenConnection();
             UpdateDataSet();
             List<string> list = new List<string>();
