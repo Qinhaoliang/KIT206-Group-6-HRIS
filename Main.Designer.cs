@@ -30,20 +30,21 @@ namespace HRIS
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.ClassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ConsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.StaffToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.unitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
+            // exitTemplateButton
+            // 
+            this.exitTemplateButton.Location = new System.Drawing.Point(399, 173);
+            this.exitTemplateButton.Click += new System.EventHandler(this.exitTemplateButton_Click);
+            // 
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ClassToolStripMenuItem,
-            this.ConsToolStripMenuItem,
             this.StaffToolStripMenuItem1,
             this.unitToolStripMenuItem,
             this.exitToolStripMenuItem});
@@ -52,20 +53,6 @@ namespace HRIS
             this.menuStrip1.Size = new System.Drawing.Size(528, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // ClassToolStripMenuItem
-            // 
-            this.ClassToolStripMenuItem.Name = "ClassToolStripMenuItem";
-            this.ClassToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
-            this.ClassToolStripMenuItem.Text = "Class";
-            this.ClassToolStripMenuItem.Click += new System.EventHandler(this.ClassToolStripMenuItem_Click);
-            // 
-            // ConsToolStripMenuItem
-            // 
-            this.ConsToolStripMenuItem.Name = "ConsToolStripMenuItem";
-            this.ConsToolStripMenuItem.Size = new System.Drawing.Size(115, 24);
-            this.ConsToolStripMenuItem.Text = "Consultation";
-            this.ConsToolStripMenuItem.Click += new System.EventHandler(this.ConsToolStripMenuItem_Click);
             // 
             // StaffToolStripMenuItem1
             // 
@@ -96,6 +83,8 @@ namespace HRIS
             this.Controls.Add(this.menuStrip1);
             this.Name = "Main";
             this.Text = "Main";
+            this.Controls.SetChildIndex(this.menuStrip1, 0);
+            this.Controls.SetChildIndex(this.exitTemplateButton, 0);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -106,8 +95,6 @@ namespace HRIS
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem ClassToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ConsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem StaffToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem unitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;

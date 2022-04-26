@@ -35,27 +35,27 @@ namespace HRIS
             this.classTableAdapter = new HRIS.testDataSetTableAdapters.classTableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.staffTextBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.roomTextBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.campusTextBox = new System.Windows.Forms.TextBox();
-            this.startTextBox = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.typeTextBox = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.unit_codeTextBox = new System.Windows.Forms.TextBox();
-            this.dayTextBox = new System.Windows.Forms.TextBox();
-            this.endTextBox = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.staffComboBox = new System.Windows.Forms.ComboBox();
+            this.unit_codeComboBox = new System.Windows.Forms.ComboBox();
+            this.typeComboBox = new System.Windows.Forms.ComboBox();
+            this.campusComboBox = new System.Windows.Forms.ComboBox();
+            this.dayComboBox = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.modifyButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.roomTextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.startTextBox = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.endTextBox = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.classBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -89,23 +89,23 @@ namespace HRIS
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.staffComboBox);
+            this.panel1.Controls.Add(this.unit_codeComboBox);
+            this.panel1.Controls.Add(this.typeComboBox);
+            this.panel1.Controls.Add(this.campusComboBox);
+            this.panel1.Controls.Add(this.dayComboBox);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.saveButton);
             this.panel1.Controls.Add(this.cancelButton);
             this.panel1.Controls.Add(this.modifyButton);
             this.panel1.Controls.Add(this.addButton);
-            this.panel1.Controls.Add(this.staffTextBox);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.roomTextBox);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.campusTextBox);
             this.panel1.Controls.Add(this.startTextBox);
             this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.typeTextBox);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.unit_codeTextBox);
-            this.panel1.Controls.Add(this.dayTextBox);
             this.panel1.Controls.Add(this.endTextBox);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.label11);
@@ -115,13 +115,107 @@ namespace HRIS
             this.panel1.Size = new System.Drawing.Size(1038, 217);
             this.panel1.TabIndex = 11;
             // 
-            // staffTextBox
+            // staffComboBox
             // 
-            this.staffTextBox.Font = new System.Drawing.Font("宋体", 12F);
-            this.staffTextBox.Location = new System.Drawing.Point(859, 89);
-            this.staffTextBox.Name = "staffTextBox";
-            this.staffTextBox.Size = new System.Drawing.Size(130, 30);
-            this.staffTextBox.TabIndex = 26;
+            this.staffComboBox.Font = new System.Drawing.Font("宋体", 12F);
+            this.staffComboBox.FormattingEnabled = true;
+            this.staffComboBox.Location = new System.Drawing.Point(859, 90);
+            this.staffComboBox.Name = "staffComboBox";
+            this.staffComboBox.Size = new System.Drawing.Size(134, 28);
+            this.staffComboBox.TabIndex = 44;
+            // 
+            // unit_codeComboBox
+            // 
+            this.unit_codeComboBox.Font = new System.Drawing.Font("宋体", 12F);
+            this.unit_codeComboBox.FormattingEnabled = true;
+            this.unit_codeComboBox.Location = new System.Drawing.Point(138, 32);
+            this.unit_codeComboBox.Name = "unit_codeComboBox";
+            this.unit_codeComboBox.Size = new System.Drawing.Size(134, 28);
+            this.unit_codeComboBox.TabIndex = 43;
+            // 
+            // typeComboBox
+            // 
+            this.typeComboBox.Font = new System.Drawing.Font("宋体", 12F);
+            this.typeComboBox.FormattingEnabled = true;
+            this.typeComboBox.Location = new System.Drawing.Point(363, 84);
+            this.typeComboBox.Name = "typeComboBox";
+            this.typeComboBox.Size = new System.Drawing.Size(134, 28);
+            this.typeComboBox.TabIndex = 42;
+            // 
+            // campusComboBox
+            // 
+            this.campusComboBox.Font = new System.Drawing.Font("宋体", 12F);
+            this.campusComboBox.FormattingEnabled = true;
+            this.campusComboBox.Location = new System.Drawing.Point(138, 84);
+            this.campusComboBox.Name = "campusComboBox";
+            this.campusComboBox.Size = new System.Drawing.Size(134, 28);
+            this.campusComboBox.TabIndex = 41;
+            // 
+            // dayComboBox
+            // 
+            this.dayComboBox.Font = new System.Drawing.Font("宋体", 12F);
+            this.dayComboBox.FormattingEnabled = true;
+            this.dayComboBox.Location = new System.Drawing.Point(364, 32);
+            this.dayComboBox.Name = "dayComboBox";
+            this.dayComboBox.Size = new System.Drawing.Size(133, 28);
+            this.dayComboBox.TabIndex = 40;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(777, 162);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 29);
+            this.button1.TabIndex = 39;
+            this.button1.Text = "Exit";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // saveButton
+            // 
+            this.saveButton.Enabled = false;
+            this.saveButton.Location = new System.Drawing.Point(469, 162);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(4);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(100, 29);
+            this.saveButton.TabIndex = 37;
+            this.saveButton.Text = "Save";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            // 
+            // cancelButton
+            // 
+            this.cancelButton.Enabled = false;
+            this.cancelButton.Location = new System.Drawing.Point(623, 162);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(4);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(100, 29);
+            this.cancelButton.TabIndex = 38;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+            // 
+            // modifyButton
+            // 
+            this.modifyButton.Location = new System.Drawing.Point(316, 162);
+            this.modifyButton.Margin = new System.Windows.Forms.Padding(4);
+            this.modifyButton.Name = "modifyButton";
+            this.modifyButton.Size = new System.Drawing.Size(100, 29);
+            this.modifyButton.TabIndex = 36;
+            this.modifyButton.Text = "Edit";
+            this.modifyButton.UseVisualStyleBackColor = true;
+            this.modifyButton.Click += new System.EventHandler(this.modifyButton_Click);
+            // 
+            // addButton
+            // 
+            this.addButton.Location = new System.Drawing.Point(154, 162);
+            this.addButton.Margin = new System.Windows.Forms.Padding(4);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(100, 29);
+            this.addButton.TabIndex = 35;
+            this.addButton.Text = "Add";
+            this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // label2
             // 
@@ -138,7 +232,7 @@ namespace HRIS
             this.roomTextBox.Font = new System.Drawing.Font("宋体", 12F);
             this.roomTextBox.Location = new System.Drawing.Point(859, 33);
             this.roomTextBox.Name = "roomTextBox";
-            this.roomTextBox.Size = new System.Drawing.Size(130, 30);
+            this.roomTextBox.Size = new System.Drawing.Size(134, 30);
             this.roomTextBox.TabIndex = 24;
             // 
             // label1
@@ -150,14 +244,6 @@ namespace HRIS
             this.label1.Size = new System.Drawing.Size(59, 20);
             this.label1.TabIndex = 23;
             this.label1.Text = "room:";
-            // 
-            // campusTextBox
-            // 
-            this.campusTextBox.Font = new System.Drawing.Font("宋体", 12F);
-            this.campusTextBox.Location = new System.Drawing.Point(138, 84);
-            this.campusTextBox.Name = "campusTextBox";
-            this.campusTextBox.Size = new System.Drawing.Size(134, 30);
-            this.campusTextBox.TabIndex = 22;
             // 
             // startTextBox
             // 
@@ -176,14 +262,6 @@ namespace HRIS
             this.label12.Size = new System.Drawing.Size(69, 20);
             this.label12.TabIndex = 6;
             this.label12.Text = "start:";
-            // 
-            // typeTextBox
-            // 
-            this.typeTextBox.Font = new System.Drawing.Font("宋体", 12F);
-            this.typeTextBox.Location = new System.Drawing.Point(364, 87);
-            this.typeTextBox.Name = "typeTextBox";
-            this.typeTextBox.Size = new System.Drawing.Size(133, 30);
-            this.typeTextBox.TabIndex = 20;
             // 
             // label8
             // 
@@ -204,22 +282,6 @@ namespace HRIS
             this.label7.Size = new System.Drawing.Size(79, 20);
             this.label7.TabIndex = 21;
             this.label7.Text = "campus:";
-            // 
-            // unit_codeTextBox
-            // 
-            this.unit_codeTextBox.Font = new System.Drawing.Font("宋体", 12F);
-            this.unit_codeTextBox.Location = new System.Drawing.Point(138, 29);
-            this.unit_codeTextBox.Name = "unit_codeTextBox";
-            this.unit_codeTextBox.Size = new System.Drawing.Size(134, 30);
-            this.unit_codeTextBox.TabIndex = 18;
-            // 
-            // dayTextBox
-            // 
-            this.dayTextBox.Font = new System.Drawing.Font("宋体", 12F);
-            this.dayTextBox.Location = new System.Drawing.Point(364, 33);
-            this.dayTextBox.Name = "dayTextBox";
-            this.dayTextBox.Size = new System.Drawing.Size(133, 30);
-            this.dayTextBox.TabIndex = 17;
             // 
             // endTextBox
             // 
@@ -259,56 +321,6 @@ namespace HRIS
             this.label9.TabIndex = 2;
             this.label9.Text = "unit_code:";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(777, 162);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 29);
-            this.button1.TabIndex = 39;
-            this.button1.Text = "Exit";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // saveButton
-            // 
-            this.saveButton.Location = new System.Drawing.Point(469, 162);
-            this.saveButton.Margin = new System.Windows.Forms.Padding(4);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(100, 29);
-            this.saveButton.TabIndex = 37;
-            this.saveButton.Text = "Save";
-            this.saveButton.UseVisualStyleBackColor = true;
-            // 
-            // cancelButton
-            // 
-            this.cancelButton.Location = new System.Drawing.Point(623, 162);
-            this.cancelButton.Margin = new System.Windows.Forms.Padding(4);
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(100, 29);
-            this.cancelButton.TabIndex = 38;
-            this.cancelButton.Text = "Cancel";
-            this.cancelButton.UseVisualStyleBackColor = true;
-            // 
-            // modifyButton
-            // 
-            this.modifyButton.Location = new System.Drawing.Point(316, 162);
-            this.modifyButton.Margin = new System.Windows.Forms.Padding(4);
-            this.modifyButton.Name = "modifyButton";
-            this.modifyButton.Size = new System.Drawing.Size(100, 29);
-            this.modifyButton.TabIndex = 36;
-            this.modifyButton.Text = "Edit";
-            this.modifyButton.UseVisualStyleBackColor = true;
-            // 
-            // addButton
-            // 
-            this.addButton.Location = new System.Drawing.Point(154, 162);
-            this.addButton.Margin = new System.Windows.Forms.Padding(4);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(100, 29);
-            this.addButton.TabIndex = 35;
-            this.addButton.Text = "Add";
-            this.addButton.UseVisualStyleBackColor = true;
-            // 
             // Class1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -334,19 +346,14 @@ namespace HRIS
         private testDataSetTableAdapters.classTableAdapter classTableAdapter;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox campusTextBox;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox typeTextBox;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox unit_codeTextBox;
-        private System.Windows.Forms.TextBox dayTextBox;
         private System.Windows.Forms.TextBox endTextBox;
         private System.Windows.Forms.TextBox startTextBox;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox staffTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox roomTextBox;
         private System.Windows.Forms.Label label1;
@@ -355,6 +362,11 @@ namespace HRIS
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button modifyButton;
         private System.Windows.Forms.Button addButton;
+        private System.Windows.Forms.ComboBox dayComboBox;
+        private System.Windows.Forms.ComboBox campusComboBox;
+        private System.Windows.Forms.ComboBox typeComboBox;
+        private System.Windows.Forms.ComboBox unit_codeComboBox;
+        private System.Windows.Forms.ComboBox staffComboBox;
     }
 }
 

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace HRIS
 {
-    public partial class Main : Form
+    public partial class Main : Template
     {
         public Main()
         {
@@ -45,6 +45,11 @@ namespace HRIS
         {
             Unit unit = new Unit();
             unit.ShowDialog();
+        }
+
+        private void exitTemplateButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

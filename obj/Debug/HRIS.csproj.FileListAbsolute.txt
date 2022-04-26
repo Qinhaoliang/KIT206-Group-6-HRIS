@@ -36,3 +36,58 @@ D:\job\HRIS\HRIS\obj\Debug\HRIS.Main.resources
 D:\job\HRIS\HRIS\obj\Debug\HRIS.Staff.resources
 D:\job\HRIS\HRIS\obj\Debug\HRIS.Unit.resources
 D:\job\HRIS\HRIS\obj\Debug\HRIS.Consultation.resources
+D:\job\HRIS\HRIS\bin\Debug\Awesomium.Core.dll
+D:\job\HRIS\HRIS\bin\Debug\Awesomium.Windows.Forms.dll
+D:\job\HRIS\HRIS\bin\Debug\Awesomium.Core.xml
+D:\job\HRIS\HRIS\bin\Debug\Awesomium.Windows.Forms.xml
+D:\job\HRIS\HRIS\bin\Debug\en-US.dll
+D:\job\HRIS\HRIS\bin\Debug\AwesomiumProcess
+D:\job\HRIS\HRIS\bin\Debug\Awesomium.dll
+D:\job\HRIS\HRIS\bin\Debug\icudt42.dll
+D:\job\HRIS final\HRIS\bin\Debug\HRIS.exe.config
+D:\job\HRIS final\HRIS\bin\Debug\HRIS.exe
+D:\job\HRIS final\HRIS\bin\Debug\HRIS.pdb
+D:\job\HRIS final\HRIS\bin\Debug\Awesomium.Core.dll
+D:\job\HRIS final\HRIS\bin\Debug\Awesomium.Windows.Forms.dll
+D:\job\HRIS final\HRIS\bin\Debug\BouncyCastle.Crypto.dll
+D:\job\HRIS final\HRIS\bin\Debug\Google.Protobuf.dll
+D:\job\HRIS final\HRIS\bin\Debug\K4os.Compression.LZ4.dll
+D:\job\HRIS final\HRIS\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\job\HRIS final\HRIS\bin\Debug\K4os.Hash.xxHash.dll
+D:\job\HRIS final\HRIS\bin\Debug\MySql.Data.dll
+D:\job\HRIS final\HRIS\bin\Debug\System.Buffers.dll
+D:\job\HRIS final\HRIS\bin\Debug\System.Memory.dll
+D:\job\HRIS final\HRIS\bin\Debug\System.Numerics.Vectors.dll
+D:\job\HRIS final\HRIS\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\job\HRIS final\HRIS\bin\Debug\Ubiety.Dns.Core.dll
+D:\job\HRIS final\HRIS\bin\Debug\ZstdNet.dll
+D:\job\HRIS final\HRIS\bin\Debug\Awesomium.Core.xml
+D:\job\HRIS final\HRIS\bin\Debug\Awesomium.Windows.Forms.xml
+D:\job\HRIS final\HRIS\bin\Debug\Google.Protobuf.pdb
+D:\job\HRIS final\HRIS\bin\Debug\Google.Protobuf.xml
+D:\job\HRIS final\HRIS\bin\Debug\K4os.Compression.LZ4.xml
+D:\job\HRIS final\HRIS\bin\Debug\K4os.Compression.LZ4.Streams.xml
+D:\job\HRIS final\HRIS\bin\Debug\K4os.Hash.xxHash.xml
+D:\job\HRIS final\HRIS\bin\Debug\MySql.Data.xml
+D:\job\HRIS final\HRIS\bin\Debug\System.Buffers.xml
+D:\job\HRIS final\HRIS\bin\Debug\System.Memory.xml
+D:\job\HRIS final\HRIS\bin\Debug\System.Numerics.Vectors.xml
+D:\job\HRIS final\HRIS\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\job\HRIS final\HRIS\bin\Debug\en-US.dll
+D:\job\HRIS final\HRIS\bin\Debug\AwesomiumProcess
+D:\job\HRIS final\HRIS\bin\Debug\Awesomium.dll
+D:\job\HRIS final\HRIS\bin\Debug\icudt42.dll
+D:\job\HRIS final\HRIS\obj\Debug\HRIS.Class1.resources
+D:\job\HRIS final\HRIS\obj\Debug\HRIS.Consultation.resources
+D:\job\HRIS final\HRIS\obj\Debug\HRIS.Login.resources
+D:\job\HRIS final\HRIS\obj\Debug\HRIS.Main.resources
+D:\job\HRIS final\HRIS\obj\Debug\HRIS.Properties.Resources.resources
+D:\job\HRIS final\HRIS\obj\Debug\HRIS.Staff.resources
+D:\job\HRIS final\HRIS\obj\Debug\HRIS.Template.resources
+D:\job\HRIS final\HRIS\obj\Debug\HRIS.Unit.resources
+D:\job\HRIS final\HRIS\obj\Debug\HRIS.csproj.GenerateResource.cache
+D:\job\HRIS final\HRIS\obj\Debug\HRIS.csproj.CoreCompileInputs.cache
+D:\job\HRIS final\HRIS\obj\Debug\HRIS.csproj.CopyComplete
+D:\job\HRIS final\HRIS\obj\Debug\HRIS.exe
+D:\job\HRIS final\HRIS\obj\Debug\HRIS.pdb
+D:\job\HRIS final\HRIS\obj\Debug\HRIS.csproj.AssemblyReference.cache

@@ -31,6 +31,9 @@ namespace HRIS
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dayComboBox = new System.Windows.Forms.ComboBox();
+            this.staff_idComboBox = new System.Windows.Forms.ComboBox();
+            this.delButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.calButton = new System.Windows.Forms.Button();
@@ -40,11 +43,8 @@ namespace HRIS
             this.label1 = new System.Windows.Forms.Label();
             this.endTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dayTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.idTextBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.delButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -62,6 +62,8 @@ namespace HRIS
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.dayComboBox);
+            this.panel1.Controls.Add(this.staff_idComboBox);
             this.panel1.Controls.Add(this.delButton);
             this.panel1.Controls.Add(this.exitButton);
             this.panel1.Controls.Add(this.saveButton);
@@ -72,18 +74,45 @@ namespace HRIS
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.endTextBox);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.dayTextBox);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.idTextBox);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Location = new System.Drawing.Point(36, 261);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(606, 250);
             this.panel1.TabIndex = 40;
             // 
+            // dayComboBox
+            // 
+            this.dayComboBox.Font = new System.Drawing.Font("宋体", 12F);
+            this.dayComboBox.FormattingEnabled = true;
+            this.dayComboBox.Location = new System.Drawing.Point(130, 90);
+            this.dayComboBox.Name = "dayComboBox";
+            this.dayComboBox.Size = new System.Drawing.Size(191, 28);
+            this.dayComboBox.TabIndex = 46;
+            // 
+            // staff_idComboBox
+            // 
+            this.staff_idComboBox.Font = new System.Drawing.Font("宋体", 12F);
+            this.staff_idComboBox.FormattingEnabled = true;
+            this.staff_idComboBox.Location = new System.Drawing.Point(130, 38);
+            this.staff_idComboBox.Name = "staff_idComboBox";
+            this.staff_idComboBox.Size = new System.Drawing.Size(191, 28);
+            this.staff_idComboBox.TabIndex = 45;
+            // 
+            // delButton
+            // 
+            this.delButton.Location = new System.Drawing.Point(469, 67);
+            this.delButton.Margin = new System.Windows.Forms.Padding(4);
+            this.delButton.Name = "delButton";
+            this.delButton.Size = new System.Drawing.Size(100, 29);
+            this.delButton.TabIndex = 35;
+            this.delButton.Text = "Del";
+            this.delButton.UseVisualStyleBackColor = true;
+            this.delButton.Click += new System.EventHandler(this.delButton_Click);
+            // 
             // exitButton
             // 
-            this.exitButton.Location = new System.Drawing.Point(469, 162);
+            this.exitButton.Location = new System.Drawing.Point(469, 160);
             this.exitButton.Margin = new System.Windows.Forms.Padding(4);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(100, 29);
@@ -94,16 +123,19 @@ namespace HRIS
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(354, 162);
+            this.saveButton.Enabled = false;
+            this.saveButton.Location = new System.Drawing.Point(354, 113);
             this.saveButton.Margin = new System.Windows.Forms.Padding(4);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(100, 29);
             this.saveButton.TabIndex = 32;
             this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // calButton
             // 
+            this.calButton.Enabled = false;
             this.calButton.Location = new System.Drawing.Point(469, 113);
             this.calButton.Margin = new System.Windows.Forms.Padding(4);
             this.calButton.Name = "calButton";
@@ -111,16 +143,18 @@ namespace HRIS
             this.calButton.TabIndex = 33;
             this.calButton.Text = "Cancel";
             this.calButton.UseVisualStyleBackColor = true;
+            this.calButton.Click += new System.EventHandler(this.calButton_Click);
             // 
             // editButton
             // 
-            this.editButton.Location = new System.Drawing.Point(354, 113);
+            this.editButton.Location = new System.Drawing.Point(354, 160);
             this.editButton.Margin = new System.Windows.Forms.Padding(4);
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(100, 29);
             this.editButton.TabIndex = 30;
             this.editButton.Text = "Edit";
             this.editButton.UseVisualStyleBackColor = true;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
             // addButton
             // 
@@ -131,6 +165,7 @@ namespace HRIS
             this.addButton.TabIndex = 29;
             this.addButton.Text = "Add";
             this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // startTextBox
             // 
@@ -168,14 +203,6 @@ namespace HRIS
             this.label3.TabIndex = 23;
             this.label3.Text = "end:";
             // 
-            // dayTextBox
-            // 
-            this.dayTextBox.Font = new System.Drawing.Font("宋体", 12F);
-            this.dayTextBox.Location = new System.Drawing.Point(130, 87);
-            this.dayTextBox.Name = "dayTextBox";
-            this.dayTextBox.Size = new System.Drawing.Size(191, 30);
-            this.dayTextBox.TabIndex = 22;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -186,14 +213,6 @@ namespace HRIS
             this.label7.TabIndex = 21;
             this.label7.Text = "day:";
             // 
-            // idTextBox
-            // 
-            this.idTextBox.Font = new System.Drawing.Font("宋体", 12F);
-            this.idTextBox.Location = new System.Drawing.Point(130, 36);
-            this.idTextBox.Name = "idTextBox";
-            this.idTextBox.Size = new System.Drawing.Size(191, 30);
-            this.idTextBox.TabIndex = 18;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -203,16 +222,6 @@ namespace HRIS
             this.label9.Size = new System.Drawing.Size(99, 20);
             this.label9.TabIndex = 2;
             this.label9.Text = "staff_id:";
-            // 
-            // delButton
-            // 
-            this.delButton.Location = new System.Drawing.Point(469, 67);
-            this.delButton.Margin = new System.Windows.Forms.Padding(4);
-            this.delButton.Name = "delButton";
-            this.delButton.Size = new System.Drawing.Size(100, 29);
-            this.delButton.TabIndex = 35;
-            this.delButton.Text = "Del";
-            this.delButton.UseVisualStyleBackColor = true;
             // 
             // Consultation
             // 
@@ -245,9 +254,9 @@ namespace HRIS
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox endTextBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox dayTextBox;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox idTextBox;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox staff_idComboBox;
+        private System.Windows.Forms.ComboBox dayComboBox;
     }
 }

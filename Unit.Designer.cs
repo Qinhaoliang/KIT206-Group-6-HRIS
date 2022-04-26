@@ -31,18 +31,23 @@ namespace HRIS
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.codeTextBox = new System.Windows.Forms.TextBox();
+            this.coordinatorComboBox = new System.Windows.Forms.ComboBox();
             this.cancelButton = new System.Windows.Forms.Button();
-            this.addButton = new System.Windows.Forms.Button();
-            this.coordinatorTextBox = new System.Windows.Forms.TextBox();
+            this.add1Button = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.titleTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.codeTextBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // exitTemplateButton
+            // 
+            this.exitTemplateButton.Location = new System.Drawing.Point(409, 442);
+            this.exitTemplateButton.Click += new System.EventHandler(this.exitTemplateButton_Click);
             // 
             // dataGridView1
             // 
@@ -58,18 +63,35 @@ namespace HRIS
             // panel1
             // 
             this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.codeTextBox);
+            this.panel1.Controls.Add(this.coordinatorComboBox);
             this.panel1.Controls.Add(this.cancelButton);
-            this.panel1.Controls.Add(this.addButton);
-            this.panel1.Controls.Add(this.coordinatorTextBox);
+            this.panel1.Controls.Add(this.add1Button);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.titleTextBox);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.codeTextBox);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Location = new System.Drawing.Point(38, 234);
+            this.panel1.Location = new System.Drawing.Point(38, 225);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(471, 195);
             this.panel1.TabIndex = 13;
+            // 
+            // codeTextBox
+            // 
+            this.codeTextBox.Font = new System.Drawing.Font("宋体", 12F);
+            this.codeTextBox.Location = new System.Drawing.Point(147, 35);
+            this.codeTextBox.Name = "codeTextBox";
+            this.codeTextBox.Size = new System.Drawing.Size(203, 30);
+            this.codeTextBox.TabIndex = 37;
+            // 
+            // coordinatorComboBox
+            // 
+            this.coordinatorComboBox.Font = new System.Drawing.Font("宋体", 12F);
+            this.coordinatorComboBox.FormattingEnabled = true;
+            this.coordinatorComboBox.Location = new System.Drawing.Point(147, 141);
+            this.coordinatorComboBox.Name = "coordinatorComboBox";
+            this.coordinatorComboBox.Size = new System.Drawing.Size(203, 28);
+            this.coordinatorComboBox.TabIndex = 36;
             // 
             // cancelButton
             // 
@@ -81,23 +103,16 @@ namespace HRIS
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
             // 
-            // addButton
+            // add1Button
             // 
-            this.addButton.Location = new System.Drawing.Point(361, 57);
-            this.addButton.Margin = new System.Windows.Forms.Padding(4);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(100, 29);
-            this.addButton.TabIndex = 29;
-            this.addButton.Text = "Add";
-            this.addButton.UseVisualStyleBackColor = true;
-            // 
-            // coordinatorTextBox
-            // 
-            this.coordinatorTextBox.Font = new System.Drawing.Font("宋体", 12F);
-            this.coordinatorTextBox.Location = new System.Drawing.Point(147, 140);
-            this.coordinatorTextBox.Name = "coordinatorTextBox";
-            this.coordinatorTextBox.Size = new System.Drawing.Size(203, 30);
-            this.coordinatorTextBox.TabIndex = 28;
+            this.add1Button.Location = new System.Drawing.Point(367, 59);
+            this.add1Button.Margin = new System.Windows.Forms.Padding(4);
+            this.add1Button.Name = "add1Button";
+            this.add1Button.Size = new System.Drawing.Size(100, 29);
+            this.add1Button.TabIndex = 29;
+            this.add1Button.Text = "Add";
+            this.add1Button.UseVisualStyleBackColor = true;
+            this.add1Button.Click += new System.EventHandler(this.addButton_Click);
             // 
             // label1
             // 
@@ -127,14 +142,6 @@ namespace HRIS
             this.label7.TabIndex = 21;
             this.label7.Text = "title:";
             // 
-            // codeTextBox
-            // 
-            this.codeTextBox.Font = new System.Drawing.Font("宋体", 12F);
-            this.codeTextBox.Location = new System.Drawing.Point(147, 36);
-            this.codeTextBox.Name = "codeTextBox";
-            this.codeTextBox.Size = new System.Drawing.Size(203, 30);
-            this.codeTextBox.TabIndex = 18;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -147,25 +154,28 @@ namespace HRIS
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(361, 116);
+            this.button1.Location = new System.Drawing.Point(367, 121);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 29);
-            this.button1.TabIndex = 34;
-            this.button1.Text = "Exit";
+            this.button1.TabIndex = 38;
+            this.button1.Text = "class";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // Unit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(546, 448);
+            this.ClientSize = new System.Drawing.Size(546, 497);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Unit";
             this.Text = "unit";
             this.Load += new System.EventHandler(this.Unit_Load);
+            this.Controls.SetChildIndex(this.exitTemplateButton, 0);
+            this.Controls.SetChildIndex(this.dataGridView1, 0);
+            this.Controls.SetChildIndex(this.panel1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -176,15 +186,15 @@ namespace HRIS
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Button addButton;
-        private System.Windows.Forms.TextBox coordinatorTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox titleTextBox;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox codeTextBox;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox coordinatorComboBox;
+        private System.Windows.Forms.TextBox codeTextBox;
+        private System.Windows.Forms.Button add1Button;
+        public System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
     }
 }
