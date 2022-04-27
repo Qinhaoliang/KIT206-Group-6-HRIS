@@ -25,7 +25,6 @@ namespace HRIS
                 this.Hide();
                 Main main = new Main();
                 main.ShowDialog();
-                
             }
             else
             {

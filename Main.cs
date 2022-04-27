@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace HRIS
 {
-    public partial class Main : Form
+    public partial class Main : Template
     {
         public Main()
         {
@@ -20,7 +20,8 @@ namespace HRIS
 
         private void ConsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Consultation consultation = new Consultation();
+            consultation.ShowDialog();
         }
 
         private void ClassToolStripMenuItem_Click(object sender, EventArgs e)
@@ -38,6 +39,17 @@ namespace HRIS
         {
             Staff staff = new Staff();
             staff.ShowDialog();
+        }
+
+        private void unitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Unit unit = new Unit();
+            unit.ShowDialog();
+        }
+
+        private void exitTemplateButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

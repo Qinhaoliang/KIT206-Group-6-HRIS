@@ -24,7 +24,6 @@ namespace HRIS
         {
             Add,
             Update,
-            Delete,
             Save,
             Cancel,
             None
@@ -33,12 +32,28 @@ namespace HRIS
 
         MysqlDbHelper mysqlDbHelper = new MysqlDbHelper();
 
+        private const string db = "hris";
+        private const string user = "kit206g20a";
+        private const string pass = "group20a";
+        private const string server = "alacritas.cis.utas.edu.au";
+
         private void Staff_Load(object sender, EventArgs e)
         {
-            mysqlDbHelper.Initialize("localhost", "test", "root", "123456");
+            mysqlDbHelper.Initialize(server, db, user, pass);
             mysqlDbHelper.OpenConnection();
             UpdateDataSet();
             mysqlDbHelper.CloseConnection();
+
+            campusComboBox.Items.Add("Hobart");
+            campusComboBox.Items.Add("Launceston");
+            campusComboBox.SelectedIndex = 0;
+
+            categoryComboBox.Items.Add("academic");
+            categoryComboBox.Items.Add("technical");
+            categoryComboBox.Items.Add("admin");
+            categoryComboBox.Items.Add("casual");
+            categoryComboBox.SelectedIndex = 0;
+
         }
 
         private void UpdateDataSet()
@@ -61,7 +76,6 @@ namespace HRIS
                 case OPERATIONTYPE.Add:
                     addButton.Enabled = false;
                     modifyButton.Enabled = false;
-                    delButton.Enabled = false;
                     saveButton.Enabled = true;
                     cancelButton.Enabled = true;
                     picSelectButton.Enabled = true;
@@ -71,7 +85,6 @@ namespace HRIS
                 case OPERATIONTYPE.Update:
                     addButton.Enabled = false;
                     modifyButton.Enabled = false;
-                    delButton.Enabled = false;
                     saveButton.Enabled = true;
                     cancelButton.Enabled = true;
                     picSelectButton.Enabled = true;
@@ -80,20 +93,18 @@ namespace HRIS
                     idTextBox.Enabled = false;
                     given_nameTextBox.Enabled = false;
                     familyTextBox.Enabled = false;
-                    campusTextBox.Enabled = false;
+                    campusComboBox.Enabled = false;
                     phoneTextBox.Enabled = false;
                     roomTextBox.Enabled = false;
                     emailTextBox.Enabled = false;
-                    categoryTextBox.Enabled = false;
+                    categoryComboBox.Enabled = false;
                     break;
-                case OPERATIONTYPE.Delete:
                 case OPERATIONTYPE.Save:
                 case OPERATIONTYPE.Cancel:
                 case OPERATIONTYPE.None:
                 default:
                     addButton.Enabled = true;
                     modifyButton.Enabled = true;
-                    delButton.Enabled = true;
                     saveButton.Enabled = false;
                     cancelButton.Enabled = false;
                     picSelectButton.Enabled = false;
@@ -102,11 +113,11 @@ namespace HRIS
                     idTextBox.Enabled = true;
                     given_nameTextBox.Enabled = true;
                     familyTextBox.Enabled = true;
-                    campusTextBox.Enabled = true;
+                    campusComboBox.Enabled = true;
                     phoneTextBox.Enabled = true;
                     roomTextBox.Enabled = true;
                     emailTextBox.Enabled = true;
-                    categoryTextBox.Enabled = true;
+                    categoryComboBox.Enabled = true;
                     break;
             }
         }
@@ -144,11 +155,11 @@ namespace HRIS
                 given_nameTextBox.Text = dataGridView1[1, row].Value.ToString();
                 familyTextBox.Text = dataGridView1[2, row].Value.ToString();
                 titleTextBox.Text = dataGridView1[3, row].Value.ToString();
-                campusTextBox.Text = dataGridView1[4, row].Value.ToString();
+                campusComboBox.Text = dataGridView1[4, row].Value.ToString();
                 phoneTextBox.Text = dataGridView1[5, row].Value.ToString();
                 roomTextBox.Text = dataGridView1[6, row].Value.ToString();
                 emailTextBox.Text = dataGridView1[7, row].Value.ToString();
-                categoryTextBox.Text = dataGridView1[9, row].Value.ToString();
+                categoryComboBox.Text = dataGridView1[9, row].Value.ToString();
 
                 try
                 {
@@ -185,7 +196,7 @@ namespace HRIS
             operationType = OPERATIONTYPE.Add;
             EnableButtons(operationType);
             ClearTextBoxes();
-            photoPictureBox.Image = Modules.ReadDefaultImage();
+            photoPictureBox.Image = null;
         }
 
         private void modifyButton_Click(object sender, EventArgs e)
@@ -199,14 +210,12 @@ namespace HRIS
             if (operationType == OPERATIONTYPE.Add)
             {
                 ConstructAddingString();
-                
             }
             else
             {
                 ConstructUpdatingString();
             }
             byte[] bytes = Modules.Image2Bytes(photoPictureBox.Image);
-            mysqlDbHelper.Initialize("localhost", "test", "root", "123456");
             mysqlDbHelper.OpenConnection();
             GetSQLcommand(strSQLCommand, strSQLParam, bytes);
             UpdateDataSet();
@@ -227,37 +236,96 @@ namespace HRIS
                 mySqlCommand.ExecuteNonQuery();
                 mySqlCommand.Dispose();
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw;
+                MessageBox.Show(e.ToString());
+                //throw;
             }
         }
         private void cancelButton_Click(object sender, EventArgs e)
         {
             operationType = OPERATIONTYPE.None;
             EnableButtons(operationType);
-
             ClearTextBoxes();
         }
 
         string strSQLCommand;
-        string strSQLParam = "@photo";
+        string strSQLParam = "@Param";
         private void ConstructAddingString()
         {
+            string strColumns = "";
+            strSQLCommand = "update staff set title='"
+                + titleTextBox.Text.Trim() + "',campus='"
+                + campusComboBox.Text.Trim() + "',phone='"
+                + phoneTextBox.Text.Trim() + "',room='"
+                + roomTextBox.Text.Trim() + "',email='"
+                + emailTextBox.Text.Trim() + "',category='"
+                + categoryComboBox.Text.Trim() + "',Photo="
+                + strSQLParam + " where id ='"
+                + idTextBox.Text.Trim() + "'";
+            //phoneTextBox.Text = strSQLCommand;
 
-            string strColumns = "id,given_name,family_name,title,campus,phone,room,email,category,photo";
-            strSQLCommand = "insert into staff("
-                + strColumns + ") values ('"
-                + idTextBox.Text.Trim() + "','"
-                + given_nameTextBox.Text.Trim() + "','"
-                + familyTextBox.Text.Trim() + "','"
-                + titleTextBox.Text.Trim() + "','"
-                + campusTextBox.Text.Trim() + "','"
-                + phoneTextBox.Text.Trim() + "',"
-                + roomTextBox.Text.Trim() + "',"
-                + emailTextBox.Text.Trim() + "',"
-                + categoryTextBox.Text.Trim() + "',"
-                + strSQLParam + ")";
+            /*if (campusComboBox.Text.Trim() == "" && categoryComboBox.Text.Trim()=="")
+            {
+                strColumns = "id,given_name,family_name,title,phone,room,email,photo";
+                strSQLCommand = "insert into staff("
+                    + strColumns + ") values ('"
+                    + idTextBox.Text.Trim() + "','"
+                    + given_nameTextBox.Text.Trim() + "','"
+                    + familyTextBox.Text.Trim() + "','"
+                    + titleTextBox.Text.Trim() + "','"
+                    + phoneTextBox.Text.Trim() + "','"
+                    + roomTextBox.Text.Trim() + "','"
+                    + emailTextBox.Text.Trim() + "',"
+                    + strSQLParam + ")";
+                
+            }
+            else if(campusComboBox.Text.Trim() != "" && categoryComboBox.Text.Trim() == "")
+            {
+                strColumns = "id,given_name,family_name,title,campus,phone,room,email,photo";
+                strSQLCommand = "insert into staff("
+                    + strColumns + ") values ('"
+                    + idTextBox.Text.Trim() + "','"
+                    + given_nameTextBox.Text.Trim() + "','"
+                    + familyTextBox.Text.Trim() + "','"
+                    + titleTextBox.Text.Trim() + "','"
+                    + campusComboBox.Text.Trim() + "','"
+                    + phoneTextBox.Text.Trim() + "','"
+                    + roomTextBox.Text.Trim() + "','"
+                    + emailTextBox.Text.Trim() + "',"
+                    + strSQLParam + ")";
+            }
+            else if(campusComboBox.Text.Trim() == "" && categoryComboBox.Text.Trim() != "")
+            {
+                strColumns = "id,given_name,family_name,title,phone,room,email,category,photo";
+                strSQLCommand = "insert into staff("
+                    + strColumns + ") values ('"
+                    + idTextBox.Text.Trim() + "','"
+                    + given_nameTextBox.Text.Trim() + "','"
+                    + familyTextBox.Text.Trim() + "','"
+                    + titleTextBox.Text.Trim() + "','"
+                    + phoneTextBox.Text.Trim() + "','"
+                    + roomTextBox.Text.Trim() + "','"
+                    + emailTextBox.Text.Trim() + "','"
+                    + categoryComboBox.Text.Trim() + "',"
+                    + strSQLParam + ")";
+            }
+            else
+            {
+                strColumns = "id,given_name,family_name,title,campus,phone,room,email,category,photo";
+                strSQLCommand = "insert into staff("
+                    + strColumns + ") values ('"
+                    + idTextBox.Text.Trim() + "','"
+                    + given_nameTextBox.Text.Trim() + "','"
+                    + familyTextBox.Text.Trim() + "','"
+                    + titleTextBox.Text.Trim() + "','"
+                    + campusComboBox.Text.Trim() + "','"
+                    + phoneTextBox.Text.Trim() + "','"
+                    + roomTextBox.Text.Trim() + "','"
+                    + emailTextBox.Text.Trim() + "','"
+                    + categoryComboBox.Text.Trim() + "',"
+                    + strSQLParam + ")";
+            }*/
         }
 
         private void ConstructUpdatingString()
@@ -277,6 +345,53 @@ namespace HRIS
                     ((TextBox)control).Clear();
                 }
             }
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            if (f_nameTextBox.Text.Trim() == "" && g_nameTextBox.Text.Trim() == "")
+            {
+                UpdateDataSet();
+            }
+            else if(f_nameTextBox.Text.Trim() == "" && g_nameTextBox.Text.Trim() != "")
+            {
+                string sqlstr = "select * from staff where given_name = '"
+                                + g_nameTextBox.Text.Trim() + "'";
+                DataTable dataTable = mysqlDbHelper.GetDataTable(sqlstr, "staff");
+                dataGridView1.DataSource = dataTable.DefaultView;
+            }
+            else if (f_nameTextBox.Text.Trim() != "" && g_nameTextBox.Text.Trim() == "")
+            {
+                string sqlstr = "select * from staff where family_name = '"
+                                + f_nameTextBox.Text.Trim() + "'";
+                DataTable dataTable = mysqlDbHelper.GetDataTable(sqlstr, "staff");
+                dataGridView1.DataSource = dataTable.DefaultView;
+            }
+            else
+            {
+                string sqlstr = "select * from staff where family_name = '"
+                                + f_nameTextBox.Text.Trim() + "' and given_name = '"
+                                + g_nameTextBox.Text.Trim() + "'";
+                DataTable dataTable = mysqlDbHelper.GetDataTable(sqlstr, "staff");
+                dataGridView1.DataSource = dataTable.DefaultView;
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Consultation consultation = new Consultation();
+            consultation.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Class1 class1 = new Class1();
+            class1.ShowDialog();
         }
     }
 }

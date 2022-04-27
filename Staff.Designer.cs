@@ -31,14 +31,14 @@ namespace HRIS
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.campusComboBox = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
-            this.delButton = new System.Windows.Forms.Button();
             this.modifyButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
             this.roomTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.categoryTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.emailTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,41 +49,50 @@ namespace HRIS
             this.idTextBox = new System.Windows.Forms.TextBox();
             this.given_nameTextBox = new System.Windows.Forms.TextBox();
             this.familyTextBox = new System.Windows.Forms.TextBox();
-            this.campusTextBox = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.picDeleteButton = new System.Windows.Forms.Button();
             this.photoPictureBox = new System.Windows.Forms.PictureBox();
             this.picSelectButton = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.g_nameTextBox = new System.Windows.Forms.TextBox();
+            this.searchButton = new System.Windows.Forms.Button();
+            this.f_nameTextBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.categoryComboBox = new System.Windows.Forms.ComboBox();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.photoPictureBox)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(37, 30);
+            this.dataGridView1.Location = new System.Drawing.Point(23, 30);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(1068, 312);
+            this.dataGridView1.Size = new System.Drawing.Size(1082, 328);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.campusComboBox);
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.saveButton);
             this.panel1.Controls.Add(this.cancelButton);
-            this.panel1.Controls.Add(this.delButton);
             this.panel1.Controls.Add(this.modifyButton);
             this.panel1.Controls.Add(this.addButton);
             this.panel1.Controls.Add(this.roomTextBox);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.categoryTextBox);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.emailTextBox);
             this.panel1.Controls.Add(this.label3);
@@ -94,67 +103,78 @@ namespace HRIS
             this.panel1.Controls.Add(this.idTextBox);
             this.panel1.Controls.Add(this.given_nameTextBox);
             this.panel1.Controls.Add(this.familyTextBox);
-            this.panel1.Controls.Add(this.campusTextBox);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Location = new System.Drawing.Point(37, 383);
+            this.panel1.Location = new System.Drawing.Point(23, 455);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(888, 260);
+            this.panel1.Size = new System.Drawing.Size(888, 238);
             this.panel1.TabIndex = 12;
+            // 
+            // campusComboBox
+            // 
+            this.campusComboBox.Font = new System.Drawing.Font("宋体", 12F);
+            this.campusComboBox.FormattingEnabled = true;
+            this.campusComboBox.Location = new System.Drawing.Point(363, 88);
+            this.campusComboBox.Name = "campusComboBox";
+            this.campusComboBox.Size = new System.Drawing.Size(200, 28);
+            this.campusComboBox.TabIndex = 35;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(722, 201);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 29);
+            this.button1.TabIndex = 34;
+            this.button1.Text = "Exit";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(502, 201);
+            this.saveButton.Enabled = false;
+            this.saveButton.Location = new System.Drawing.Point(414, 201);
             this.saveButton.Margin = new System.Windows.Forms.Padding(4);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(100, 29);
             this.saveButton.TabIndex = 32;
-            this.saveButton.Text = "保存";
+            this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(684, 201);
+            this.cancelButton.Enabled = false;
+            this.cancelButton.Location = new System.Drawing.Point(568, 201);
             this.cancelButton.Margin = new System.Windows.Forms.Padding(4);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(100, 29);
             this.cancelButton.TabIndex = 33;
-            this.cancelButton.Text = "取消";
+            this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
-            // delButton
-            // 
-            this.delButton.Location = new System.Drawing.Point(346, 201);
-            this.delButton.Margin = new System.Windows.Forms.Padding(4);
-            this.delButton.Name = "delButton";
-            this.delButton.Size = new System.Drawing.Size(100, 29);
-            this.delButton.TabIndex = 31;
-            this.delButton.Text = "删除";
-            this.delButton.UseVisualStyleBackColor = true;
-            // 
             // modifyButton
             // 
-            this.modifyButton.Location = new System.Drawing.Point(199, 201);
+            this.modifyButton.Location = new System.Drawing.Point(261, 201);
             this.modifyButton.Margin = new System.Windows.Forms.Padding(4);
             this.modifyButton.Name = "modifyButton";
             this.modifyButton.Size = new System.Drawing.Size(100, 29);
             this.modifyButton.TabIndex = 30;
-            this.modifyButton.Text = "修改";
+            this.modifyButton.Text = "Edit";
             this.modifyButton.UseVisualStyleBackColor = true;
             this.modifyButton.Click += new System.EventHandler(this.modifyButton_Click);
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(57, 201);
+            this.addButton.Location = new System.Drawing.Point(72, 201);
             this.addButton.Margin = new System.Windows.Forms.Padding(4);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(100, 29);
+            this.addButton.Size = new System.Drawing.Size(129, 29);
             this.addButton.TabIndex = 29;
-            this.addButton.Text = "添加";
+            this.addButton.Text = "Add Details";
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
@@ -175,14 +195,6 @@ namespace HRIS
             this.label1.Size = new System.Drawing.Size(59, 20);
             this.label1.TabIndex = 27;
             this.label1.Text = "room:";
-            // 
-            // categoryTextBox
-            // 
-            this.categoryTextBox.Font = new System.Drawing.Font("宋体", 12F);
-            this.categoryTextBox.Location = new System.Drawing.Point(705, 141);
-            this.categoryTextBox.Name = "categoryTextBox";
-            this.categoryTextBox.Size = new System.Drawing.Size(150, 30);
-            this.categoryTextBox.TabIndex = 26;
             // 
             // label2
             // 
@@ -272,14 +284,6 @@ namespace HRIS
             this.familyTextBox.Size = new System.Drawing.Size(150, 30);
             this.familyTextBox.TabIndex = 16;
             // 
-            // campusTextBox
-            // 
-            this.campusTextBox.Font = new System.Drawing.Font("宋体", 12F);
-            this.campusTextBox.Location = new System.Drawing.Point(364, 87);
-            this.campusTextBox.Name = "campusTextBox";
-            this.campusTextBox.Size = new System.Drawing.Size(200, 30);
-            this.campusTextBox.TabIndex = 15;
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -320,6 +324,16 @@ namespace HRIS
             this.label9.TabIndex = 2;
             this.label9.Text = "id:";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(199, 706);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(114, 40);
+            this.button2.TabIndex = 36;
+            this.button2.Text = "consultation";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // picDeleteButton
             // 
             this.picDeleteButton.Enabled = false;
@@ -328,7 +342,7 @@ namespace HRIS
             this.picDeleteButton.Name = "picDeleteButton";
             this.picDeleteButton.Size = new System.Drawing.Size(173, 29);
             this.picDeleteButton.TabIndex = 25;
-            this.picDeleteButton.Text = "删除图片";
+            this.picDeleteButton.Text = "Delete Photo";
             this.picDeleteButton.UseVisualStyleBackColor = true;
             this.picDeleteButton.Click += new System.EventHandler(this.picDeleteButton_Click);
             // 
@@ -351,15 +365,101 @@ namespace HRIS
             this.picSelectButton.Name = "picSelectButton";
             this.picSelectButton.Size = new System.Drawing.Size(173, 29);
             this.picSelectButton.TabIndex = 24;
-            this.picSelectButton.Text = "选择图片";
+            this.picSelectButton.Text = "Choose Photo";
             this.picSelectButton.UseVisualStyleBackColor = true;
             this.picSelectButton.Click += new System.EventHandler(this.picSelectButton_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.g_nameTextBox);
+            this.groupBox1.Controls.Add(this.searchButton);
+            this.groupBox1.Controls.Add(this.f_nameTextBox);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Location = new System.Drawing.Point(23, 377);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(888, 68);
+            this.groupBox1.TabIndex = 26;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Query";
+            // 
+            // g_nameTextBox
+            // 
+            this.g_nameTextBox.Location = new System.Drawing.Point(121, 26);
+            this.g_nameTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.g_nameTextBox.Name = "g_nameTextBox";
+            this.g_nameTextBox.Size = new System.Drawing.Size(187, 25);
+            this.g_nameTextBox.TabIndex = 4;
+            // 
+            // searchButton
+            // 
+            this.searchButton.Location = new System.Drawing.Point(661, 23);
+            this.searchButton.Margin = new System.Windows.Forms.Padding(4);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(187, 29);
+            this.searchButton.TabIndex = 3;
+            this.searchButton.Text = "Query";
+            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            // 
+            // f_nameTextBox
+            // 
+            this.f_nameTextBox.Location = new System.Drawing.Point(427, 26);
+            this.f_nameTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.f_nameTextBox.Name = "f_nameTextBox";
+            this.f_nameTextBox.Size = new System.Drawing.Size(187, 25);
+            this.f_nameTextBox.TabIndex = 2;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(316, 30);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(103, 15);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "family_name:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(19, 29);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(95, 15);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "given_name:";
+            // 
+            // categoryComboBox
+            // 
+            this.categoryComboBox.Font = new System.Drawing.Font("宋体", 12F);
+            this.categoryComboBox.FormattingEnabled = true;
+            this.categoryComboBox.Location = new System.Drawing.Point(725, 596);
+            this.categoryComboBox.Name = "categoryComboBox";
+            this.categoryComboBox.Size = new System.Drawing.Size(153, 28);
+            this.categoryComboBox.TabIndex = 36;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(608, 706);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(114, 40);
+            this.button3.TabIndex = 37;
+            this.button3.Text = "class";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Staff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1118, 755);
+            this.ClientSize = new System.Drawing.Size(1144, 758);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.categoryComboBox);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.picDeleteButton);
             this.Controls.Add(this.photoPictureBox);
             this.Controls.Add(this.picSelectButton);
@@ -372,6 +472,8 @@ namespace HRIS
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.photoPictureBox)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -384,13 +486,11 @@ namespace HRIS
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox idTextBox;
         private System.Windows.Forms.TextBox given_nameTextBox;
-        private System.Windows.Forms.TextBox campusTextBox;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox roomTextBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox categoryTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox emailTextBox;
         private System.Windows.Forms.Label label3;
@@ -400,11 +500,21 @@ namespace HRIS
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Button delButton;
         private System.Windows.Forms.Button modifyButton;
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Button picDeleteButton;
         private System.Windows.Forms.PictureBox photoPictureBox;
         private System.Windows.Forms.Button picSelectButton;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button searchButton;
+        private System.Windows.Forms.TextBox f_nameTextBox;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox g_nameTextBox;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox campusComboBox;
+        private System.Windows.Forms.ComboBox categoryComboBox;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
