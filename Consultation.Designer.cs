@@ -183,8 +183,12 @@ namespace HRIS
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 20);
             this.label1.TabIndex = 27;
+<<<<<<< HEAD
             this.label1.Text = "Start:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
+=======
+            this.label1.Text = "start:";
+>>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
             // 
             // endTextBox
             // 
@@ -202,7 +206,11 @@ namespace HRIS
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 20);
             this.label3.TabIndex = 23;
+<<<<<<< HEAD
             this.label3.Text = "End:";
+=======
+            this.label3.Text = "end:";
+>>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
             // 
             // label7
             // 
@@ -212,7 +220,11 @@ namespace HRIS
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 20);
             this.label7.TabIndex = 21;
+<<<<<<< HEAD
             this.label7.Text = "Day:";
+=======
+            this.label7.Text = "day:";
+>>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
             // 
             // label9
             // 
@@ -222,7 +234,11 @@ namespace HRIS
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(99, 20);
             this.label9.TabIndex = 2;
+<<<<<<< HEAD
             this.label9.Text = "Staff id:";
+=======
+            this.label9.Text = "staff_id:";
+>>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
             // 
             // Consultation
             // 
@@ -234,7 +250,10 @@ namespace HRIS
             this.Name = "Consultation";
             this.Text = "Consultation";
             this.Load += new System.EventHandler(this.Consultation_Load);
+<<<<<<< HEAD
             this.Resize += new System.EventHandler(this.Consultation_Resize);
+=======
+>>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

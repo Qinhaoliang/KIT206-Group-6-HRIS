@@ -51,10 +51,17 @@ namespace HRIS
             campusComboBox.Items.Add("Launceston");
             campusComboBox.SelectedIndex = 0;
 
+<<<<<<< HEAD
             categoryComboBox.Items.Add("Academic");
             categoryComboBox.Items.Add("Technical");
             categoryComboBox.Items.Add("Admin");
             categoryComboBox.Items.Add("Casual");
+=======
+            categoryComboBox.Items.Add("academic");
+            categoryComboBox.Items.Add("technical");
+            categoryComboBox.Items.Add("admin");
+            categoryComboBox.Items.Add("casual");
+>>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
             categoryComboBox.SelectedIndex = 0;
 
         }
@@ -273,6 +280,10 @@ namespace HRIS
             catch (Exception e)
             {
                 MessageBox.Show(e.ToString());
+<<<<<<< HEAD
+=======
+                //throw;
+>>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
             }
         }
         private void cancelButton_Click(object sender, EventArgs e)
@@ -287,6 +298,7 @@ namespace HRIS
         private void ConstructAddingString()
         {
             string strColumns = "";
+<<<<<<< HEAD
             strSQLCommand = "update staff set title='"
                 + titleTextBox.Text.Trim() + "',campus='"
                 + campusComboBox.Text.Trim() + "',phone='"
@@ -296,6 +308,68 @@ namespace HRIS
                 + categoryComboBox.Text.Trim() + "',Photo="
                 + strSQLParam + " where id ='"
                 + IDTextBox.Text.Trim() + "'";
+=======
+            if (campusComboBox.Text.Trim() == "" && categoryComboBox.Text.Trim()=="")
+            {
+                strColumns = "id,given_name,family_name,title,phone,room,email,photo";
+                strSQLCommand = "insert into staff("
+                    + strColumns + ") values ('"
+                    + idTextBox.Text.Trim() + "','"
+                    + given_nameTextBox.Text.Trim() + "','"
+                    + familyTextBox.Text.Trim() + "','"
+                    + titleTextBox.Text.Trim() + "','"
+                    + phoneTextBox.Text.Trim() + "','"
+                    + roomTextBox.Text.Trim() + "','"
+                    + emailTextBox.Text.Trim() + "',"
+                    + strSQLParam + ")";
+            }
+            else if(campusComboBox.Text.Trim() != "" && categoryComboBox.Text.Trim() == "")
+            {
+                strColumns = "id,given_name,family_name,title,campus,phone,room,email,photo";
+                strSQLCommand = "insert into staff("
+                    + strColumns + ") values ('"
+                    + idTextBox.Text.Trim() + "','"
+                    + given_nameTextBox.Text.Trim() + "','"
+                    + familyTextBox.Text.Trim() + "','"
+                    + titleTextBox.Text.Trim() + "','"
+                    + campusComboBox.Text.Trim() + "','"
+                    + phoneTextBox.Text.Trim() + "','"
+                    + roomTextBox.Text.Trim() + "','"
+                    + emailTextBox.Text.Trim() + "',"
+                    + strSQLParam + ")";
+            }
+            else if(campusComboBox.Text.Trim() == "" && categoryComboBox.Text.Trim() != "")
+            {
+                strColumns = "id,given_name,family_name,title,phone,room,email,category,photo";
+                strSQLCommand = "insert into staff("
+                    + strColumns + ") values ('"
+                    + idTextBox.Text.Trim() + "','"
+                    + given_nameTextBox.Text.Trim() + "','"
+                    + familyTextBox.Text.Trim() + "','"
+                    + titleTextBox.Text.Trim() + "','"
+                    + phoneTextBox.Text.Trim() + "','"
+                    + roomTextBox.Text.Trim() + "','"
+                    + emailTextBox.Text.Trim() + "','"
+                    + categoryComboBox.Text.Trim() + "',"
+                    + strSQLParam + ")";
+            }
+            else
+            {
+                strColumns = "id,given_name,family_name,title,campus,phone,room,email,category,photo";
+                strSQLCommand = "insert into staff("
+                    + strColumns + ") values ('"
+                    + idTextBox.Text.Trim() + "','"
+                    + given_nameTextBox.Text.Trim() + "','"
+                    + familyTextBox.Text.Trim() + "','"
+                    + titleTextBox.Text.Trim() + "','"
+                    + campusComboBox.Text.Trim() + "','"
+                    + phoneTextBox.Text.Trim() + "','"
+                    + roomTextBox.Text.Trim() + "','"
+                    + emailTextBox.Text.Trim() + "','"
+                    + categoryComboBox.Text.Trim() + "',"
+                    + strSQLParam + ")";
+            }
+>>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
         }
 
         private void ConstructUpdatingString()
@@ -323,7 +397,11 @@ namespace HRIS
             {
                 UpdateDataSet();
             }
+<<<<<<< HEAD
             else if (f_nameTextBox.Text.Trim() == "" && g_nameTextBox.Text.Trim() != "")
+=======
+            else if(f_nameTextBox.Text.Trim() == "" && g_nameTextBox.Text.Trim() != "")
+>>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
             {
                 string sqlstr = "select * from staff where given_name = '"
                                 + g_nameTextBox.Text.Trim() + "'";
@@ -347,6 +425,7 @@ namespace HRIS
             }
         }
 
+<<<<<<< HEAD
 
         private float x;//Defines the width of the current form
         private float y;//Defines the height of the current form
@@ -385,6 +464,8 @@ namespace HRIS
             }
         }
 
+=======
+>>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
         private void button1_Click_1(object sender, EventArgs e)
         {
             this.Close();
@@ -401,6 +482,7 @@ namespace HRIS
             Class1 class1 = new Class1();
             class1.ShowDialog();
         }
+<<<<<<< HEAD
 
         private void Staff_Resize_1(object sender, EventArgs e)
         {
@@ -413,6 +495,8 @@ namespace HRIS
         {
 
         }
+=======
+>>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
     }
 }
 

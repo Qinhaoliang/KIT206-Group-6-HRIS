@@ -31,7 +31,10 @@ namespace HRIS
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+<<<<<<< HEAD
             this.button1 = new System.Windows.Forms.Button();
+=======
+>>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
             this.codeTextBox = new System.Windows.Forms.TextBox();
             this.coordinatorComboBox = new System.Windows.Forms.ComboBox();
             this.cancelButton = new System.Windows.Forms.Button();
@@ -40,6 +43,10 @@ namespace HRIS
             this.titleTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+<<<<<<< HEAD
+=======
+            this.button1 = new System.Windows.Forms.Button();
+>>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -76,6 +83,7 @@ namespace HRIS
             this.panel1.Size = new System.Drawing.Size(471, 195);
             this.panel1.TabIndex = 13;
             // 
+<<<<<<< HEAD
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(367, 121);
@@ -87,6 +95,8 @@ namespace HRIS
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+=======
+>>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
             // codeTextBox
             // 
             this.codeTextBox.Font = new System.Drawing.Font("宋体", 12F);
@@ -133,7 +143,11 @@ namespace HRIS
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(129, 20);
             this.label1.TabIndex = 27;
+<<<<<<< HEAD
             this.label1.Text = "Coordinator:";
+=======
+            this.label1.Text = "coordinator:";
+>>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
             // 
             // titleTextBox
             // 
@@ -151,7 +165,11 @@ namespace HRIS
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(69, 20);
             this.label7.TabIndex = 21;
+<<<<<<< HEAD
             this.label7.Text = "Title:";
+=======
+            this.label7.Text = "title:";
+>>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
             // 
             // label9
             // 
@@ -161,7 +179,22 @@ namespace HRIS
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(59, 20);
             this.label9.TabIndex = 2;
+<<<<<<< HEAD
             this.label9.Text = "Code:";
+=======
+            this.label9.Text = "code:";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(367, 121);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 29);
+            this.button1.TabIndex = 38;
+            this.button1.Text = "class";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+>>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
             // 
             // Unit
             // 
@@ -173,7 +206,10 @@ namespace HRIS
             this.Name = "Unit";
             this.Text = "unit";
             this.Load += new System.EventHandler(this.Unit_Load);
+<<<<<<< HEAD
             this.Resize += new System.EventHandler(this.Unit_Resize);
+=======
+>>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
             this.Controls.SetChildIndex(this.exitTemplateButton, 0);
             this.Controls.SetChildIndex(this.dataGridView1, 0);
             this.Controls.SetChildIndex(this.panel1, 0);

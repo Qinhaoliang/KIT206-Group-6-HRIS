@@ -17,9 +17,12 @@ namespace HRIS
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+<<<<<<< HEAD
             x = this.Width;
             y = this.Height;
             setTag(this);
+=======
+>>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
         }
 
         enum OPERATIONTYPE
@@ -57,7 +60,11 @@ namespace HRIS
             dayComboBox.Items.Add("Tuesday");
             dayComboBox.Items.Add("Wednesday");
             dayComboBox.Items.Add("Thursday");
+<<<<<<< HEAD
             dayComboBox.Items.Add("Thursday");
+=======
+            dayComboBox.Items.Add("Friday");
+>>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
             dayComboBox.Items.Add("Saturday");
             dayComboBox.Items.Add("Sunday");
             dayComboBox.SelectedIndex = 0;
@@ -83,6 +90,7 @@ namespace HRIS
             mysqlDbHelper.CloseConnection();
         }
 
+<<<<<<< HEAD
         private float x;
         private float y;
         private void setTag(Control cons)
@@ -116,6 +124,8 @@ namespace HRIS
                 }
             }
         }
+=======
+>>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
         private void EnableButtons(OPERATIONTYPE type)
         {
             switch (type)
@@ -169,7 +179,11 @@ namespace HRIS
                 int row = dataGridView1.CurrentCell.RowIndex;
                 if (dataGridView1[0, row].Value.ToString() == "")
                 {
+<<<<<<< HEAD
                     MessageBox.Show("Empty line currently selected!");
+=======
+                    MessageBox.Show("当前选中为空行!");
+>>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
                 }
                 else
                 {
@@ -182,6 +196,7 @@ namespace HRIS
                 }
             }
         }
+<<<<<<< HEAD
         private bool checkTime()
         {
             string sqlstr = string.Format("SELECT start,end FROM class where staff='" + staff_idComboBox.Text.ToString()
@@ -210,6 +225,8 @@ namespace HRIS
             }
             return true;
         }
+=======
+>>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
         private void ClearTextBoxes()
         {
             foreach (var control in panel1.Controls)
@@ -271,6 +288,7 @@ namespace HRIS
         {
             if (operationType == OPERATIONTYPE.Add)
             {
+<<<<<<< HEAD
                 if (checkTime())
                 {
                     ConstructAddingString();
@@ -279,6 +297,9 @@ namespace HRIS
                 {
                     MessageBox.Show("Class time conflict!");
                 }
+=======
+                ConstructAddingString();
+>>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
             }
             else
             {
@@ -293,13 +314,18 @@ namespace HRIS
             }
             else
             {
+<<<<<<< HEAD
                 MessageBox.Show("FAIL!");
+=======
+                MessageBox.Show("Faild!");
+>>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
             }
             mysqlDbHelper.CloseConnection();
             operationType = OPERATIONTYPE.None;
             EnableButtons(OPERATIONTYPE.Save);
         }
 
+<<<<<<< HEAD
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -312,6 +338,8 @@ namespace HRIS
             setControls(newx, newy, this);
         }
 
+=======
+>>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
         private void delButton_Click(object sender, EventArgs e)
         {
             strSQLCommand = "delete from consultation where staff_id ='"
@@ -327,7 +355,11 @@ namespace HRIS
             }
             else
             {
+<<<<<<< HEAD
                 MessageBox.Show("FAIL!");
+=======
+                MessageBox.Show("Faild!");
+>>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
             }
             mysqlDbHelper.CloseConnection();
         }

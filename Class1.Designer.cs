@@ -243,6 +243,7 @@ namespace HRIS
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 20);
             this.label1.TabIndex = 23;
+<<<<<<< HEAD
             this.label1.Text = "Room:";
             // 
             // startTextBox
@@ -291,6 +292,56 @@ namespace HRIS
             this.endTextBox.Size = new System.Drawing.Size(150, 30);
             this.endTextBox.TabIndex = 16;
             // 
+=======
+            this.label1.Text = "room:";
+            // 
+            // startTextBox
+            // 
+            this.startTextBox.Font = new System.Drawing.Font("宋体", 12F);
+            this.startTextBox.Location = new System.Drawing.Point(593, 33);
+            this.startTextBox.Name = "startTextBox";
+            this.startTextBox.Size = new System.Drawing.Size(150, 30);
+            this.startTextBox.TabIndex = 15;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("宋体", 12F);
+            this.label12.Location = new System.Drawing.Point(518, 36);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(69, 20);
+            this.label12.TabIndex = 6;
+            this.label12.Text = "start:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("宋体", 12F);
+            this.label8.Location = new System.Drawing.Point(288, 88);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(59, 20);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "type:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("宋体", 12F);
+            this.label7.Location = new System.Drawing.Point(15, 87);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(79, 20);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "campus:";
+            // 
+            // endTextBox
+            // 
+            this.endTextBox.Font = new System.Drawing.Font("宋体", 12F);
+            this.endTextBox.Location = new System.Drawing.Point(593, 87);
+            this.endTextBox.Name = "endTextBox";
+            this.endTextBox.Size = new System.Drawing.Size(150, 30);
+            this.endTextBox.TabIndex = 16;
+            // 
+>>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
             // label13
             // 
             this.label13.AutoSize = true;
@@ -299,7 +350,11 @@ namespace HRIS
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(49, 20);
             this.label13.TabIndex = 7;
+<<<<<<< HEAD
             this.label13.Text = "Day:";
+=======
+            this.label13.Text = "day:";
+>>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
             // 
             // label11
             // 

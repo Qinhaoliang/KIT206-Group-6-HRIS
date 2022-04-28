@@ -16,12 +16,18 @@ namespace HRIS
         public Class1()
         {
             InitializeComponent();
+<<<<<<< HEAD
             this.StartPosition = FormStartPosition.CenterScreen;  //The form is in the center of the screen
             x = this.Width;
             y = this.Height;
             setTag(this);
         }
         enum OPERATIONTYPE    //Enable the button
+=======
+            this.StartPosition = FormStartPosition.CenterScreen;  //窗体位于屏幕中央
+        }
+        enum OPERATIONTYPE    //设置按钮使能
+>>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
         {
             Add,
             Update,
@@ -40,9 +46,19 @@ namespace HRIS
         private const string pass = "group20a";
         private const string server = "alacritas.cis.utas.edu.au";
 
+        private const string db = "hris";
+        private const string user = "kit206g20a";
+        private const string pass = "group20a";
+        private const string server = "alacritas.cis.utas.edu.au";
+
         private void Form1_Load(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             
+=======
+            // TODO: 这行代码将数据加载到表“testDataSet._class”中。您可以根据需要移动或删除它。
+            //this.classTableAdapter.Fill(this.testDataSet._class);
+>>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
             mysqlDbHelper.Initialize(server, db, user, pass);
             mysqlDbHelper.OpenConnection();
             UpdateDataSet();
@@ -51,7 +67,11 @@ namespace HRIS
             dayComboBox.Items.Add("Tuesday");
             dayComboBox.Items.Add("Wednesday");
             dayComboBox.Items.Add("Thursday");
+<<<<<<< HEAD
             dayComboBox.Items.Add("Friday");
+=======
+            dayComboBox.Items.Add("Thursday");
+>>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
             dayComboBox.Items.Add("Saturday");
             dayComboBox.Items.Add("Sunday");
             dayComboBox.SelectedIndex = 0;
@@ -88,7 +108,11 @@ namespace HRIS
             reader.Close();
             list.Clear();
 
+<<<<<<< HEAD
             sqlstr = string.Format("select code from unit");   //Get all code values from the unit table (foreign key)
+=======
+            sqlstr = string.Format("select code from unit");   //取unit表的所有code值  因为是外键
+>>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
             mySqlCommand = mysqlDbHelper.CreateCmd(sqlstr);
             reader = mySqlCommand.ExecuteReader();
             while (reader.Read())
@@ -227,7 +251,11 @@ namespace HRIS
             }
             else
             {
+<<<<<<< HEAD
                 MessageBox.Show("FAIL!");
+=======
+                MessageBox.Show("Faild!");
+>>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
             }
             mysqlDbHelper.CloseConnection();
             operationType = OPERATIONTYPE.None;
@@ -241,6 +269,7 @@ namespace HRIS
             ClearTextBoxes();
         }
 
+<<<<<<< HEAD
         private void Class1_Resize(object sender, EventArgs e)
         {
             float newx = (this.Width) / x;
@@ -282,13 +311,19 @@ namespace HRIS
             }
         }
 
+=======
+>>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
         string strSQLCommand;
         private void ConstructAddingString()
         {
             string strColumns = "";
             if (typeComboBox.Text.Trim() == "" && staffComboBox.Text.Trim() == "")
             {
+<<<<<<< HEAD
                 strColumns = "unit_code,campus,day,start,end,room";    //Constructing SQL statements
+=======
+                strColumns = "unit_code,campus,day,start,end,room";    //构造SQL语句
+>>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
                 strSQLCommand = "insert into class("
                     + strColumns + ") values ('"
                     + unit_codeComboBox.Text.Trim() + "','"
