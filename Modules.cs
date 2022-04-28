@@ -8,10 +8,10 @@ using System.IO;
 
 namespace HRIS
 {
-    class Modules  //定义一个Modules类
+    class Modules  //Define a Modules class
     {
         const string strDefaultPic = "default.jpg";
-        public static Image ReadDefaultImage() //默认图片
+        public static Image ReadDefaultImage() //The default image
         {
             Image image = null;
             try
@@ -24,7 +24,7 @@ namespace HRIS
             }
             return image;
         }
-        public static byte[] Image2Bytes(Image image) //将image转换为二进制流
+        public static byte[] Image2Bytes(Image image) //Convert the image to a binary stream
         {
             if (image == null)
             {
@@ -39,7 +39,7 @@ namespace HRIS
             ms.Close();
             return bytes;
         }
-        public static Image Bytes2Image(byte[] bytes) //将二进制流转换为image
+        public static Image Bytes2Image(byte[] bytes) //Convert the binary stream to an image
         {
             Image image = null;
             MemoryStream ms = new MemoryStream(bytes);

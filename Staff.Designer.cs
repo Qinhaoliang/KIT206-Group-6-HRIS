@@ -46,7 +46,7 @@ namespace HRIS
             this.label7 = new System.Windows.Forms.Label();
             this.phoneTextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.idTextBox = new System.Windows.Forms.TextBox();
+            this.IDTextBox = new System.Windows.Forms.TextBox();
             this.given_nameTextBox = new System.Windows.Forms.TextBox();
             this.familyTextBox = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -73,6 +73,9 @@ namespace HRIS
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(23, 30);
             this.dataGridView1.Name = "dataGridView1";
@@ -100,7 +103,7 @@ namespace HRIS
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.phoneTextBox);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.idTextBox);
+            this.panel1.Controls.Add(this.IDTextBox);
             this.panel1.Controls.Add(this.given_nameTextBox);
             this.panel1.Controls.Add(this.familyTextBox);
             this.panel1.Controls.Add(this.label13);
@@ -194,7 +197,7 @@ namespace HRIS
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 20);
             this.label1.TabIndex = 27;
-            this.label1.Text = "room:";
+            this.label1.Text = "Room:";
             // 
             // label2
             // 
@@ -204,7 +207,7 @@ namespace HRIS
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(99, 20);
             this.label2.TabIndex = 25;
-            this.label2.Text = "category:";
+            this.label2.Text = "Category:";
             // 
             // emailTextBox
             // 
@@ -222,7 +225,7 @@ namespace HRIS
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 20);
             this.label3.TabIndex = 23;
-            this.label3.Text = "email:";
+            this.label3.Text = "Email:";
             // 
             // titleTextBox
             // 
@@ -240,7 +243,7 @@ namespace HRIS
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(69, 20);
             this.label7.TabIndex = 21;
-            this.label7.Text = "title:";
+            this.label7.Text = "Title:";
             // 
             // phoneTextBox
             // 
@@ -258,15 +261,15 @@ namespace HRIS
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(69, 20);
             this.label8.TabIndex = 19;
-            this.label8.Text = "phone:";
+            this.label8.Text = "Phone:";
             // 
-            // idTextBox
+            // IDTextBox
             // 
-            this.idTextBox.Font = new System.Drawing.Font("宋体", 12F);
-            this.idTextBox.Location = new System.Drawing.Point(90, 36);
-            this.idTextBox.Name = "idTextBox";
-            this.idTextBox.Size = new System.Drawing.Size(134, 30);
-            this.idTextBox.TabIndex = 18;
+            this.IDTextBox.Font = new System.Drawing.Font("宋体", 12F);
+            this.IDTextBox.Location = new System.Drawing.Point(90, 36);
+            this.IDTextBox.Name = "IDTextBox";
+            this.IDTextBox.Size = new System.Drawing.Size(134, 30);
+            this.IDTextBox.TabIndex = 18;
             // 
             // given_nameTextBox
             // 
@@ -292,7 +295,7 @@ namespace HRIS
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(119, 20);
             this.label13.TabIndex = 7;
-            this.label13.Text = "given_name:";
+            this.label13.Text = "Given name:";
             // 
             // label12
             // 
@@ -302,7 +305,7 @@ namespace HRIS
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(79, 20);
             this.label12.TabIndex = 6;
-            this.label12.Text = "campus:";
+            this.label12.Text = "Campus:";
             // 
             // label11
             // 
@@ -312,7 +315,7 @@ namespace HRIS
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(129, 20);
             this.label11.TabIndex = 5;
-            this.label11.Text = "family_name:";
+            this.label11.Text = "Family name:";
             // 
             // label9
             // 
@@ -322,7 +325,7 @@ namespace HRIS
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(39, 20);
             this.label9.TabIndex = 2;
-            this.label9.Text = "id:";
+            this.label9.Text = "ID:";
             // 
             // button2
             // 
@@ -330,7 +333,7 @@ namespace HRIS
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(114, 40);
             this.button2.TabIndex = 36;
-            this.button2.Text = "consultation";
+            this.button2.Text = "Consultation";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -365,7 +368,7 @@ namespace HRIS
             this.picSelectButton.Name = "picSelectButton";
             this.picSelectButton.Size = new System.Drawing.Size(173, 29);
             this.picSelectButton.TabIndex = 24;
-            this.picSelectButton.Text = "Choose Photo";
+            this.picSelectButton.Text = "Add Photo";
             this.picSelectButton.UseVisualStyleBackColor = true;
             this.picSelectButton.Click += new System.EventHandler(this.picSelectButton_Click);
             // 
@@ -400,7 +403,7 @@ namespace HRIS
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(187, 29);
             this.searchButton.TabIndex = 3;
-            this.searchButton.Text = "Query";
+            this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = true;
             this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
@@ -420,7 +423,8 @@ namespace HRIS
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(103, 15);
             this.label4.TabIndex = 0;
-            this.label4.Text = "family_name:";
+            this.label4.Text = "Family name:";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -430,7 +434,7 @@ namespace HRIS
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(95, 15);
             this.label5.TabIndex = 0;
-            this.label5.Text = "given_name:";
+            this.label5.Text = "Given name:";
             // 
             // categoryComboBox
             // 
@@ -447,7 +451,7 @@ namespace HRIS
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(114, 40);
             this.button3.TabIndex = 37;
-            this.button3.Text = "class";
+            this.button3.Text = "Class";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -468,6 +472,7 @@ namespace HRIS
             this.Name = "Staff";
             this.Text = "Staff";
             this.Load += new System.EventHandler(this.Staff_Load);
+            this.Resize += new System.EventHandler(this.Staff_Resize_1);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -484,7 +489,7 @@ namespace HRIS
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox titleTextBox;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox idTextBox;
+        private System.Windows.Forms.TextBox IDTextBox;
         private System.Windows.Forms.TextBox given_nameTextBox;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;

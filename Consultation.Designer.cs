@@ -183,7 +183,8 @@ namespace HRIS
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 20);
             this.label1.TabIndex = 27;
-            this.label1.Text = "start:";
+            this.label1.Text = "Start:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // endTextBox
             // 
@@ -201,7 +202,7 @@ namespace HRIS
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 20);
             this.label3.TabIndex = 23;
-            this.label3.Text = "end:";
+            this.label3.Text = "End:";
             // 
             // label7
             // 
@@ -211,7 +212,7 @@ namespace HRIS
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 20);
             this.label7.TabIndex = 21;
-            this.label7.Text = "day:";
+            this.label7.Text = "Day:";
             // 
             // label9
             // 
@@ -221,7 +222,7 @@ namespace HRIS
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(99, 20);
             this.label9.TabIndex = 2;
-            this.label9.Text = "staff_id:";
+            this.label9.Text = "Staff id:";
             // 
             // Consultation
             // 
@@ -233,6 +234,7 @@ namespace HRIS
             this.Name = "Consultation";
             this.Text = "Consultation";
             this.Load += new System.EventHandler(this.Consultation_Load);
+            this.Resize += new System.EventHandler(this.Consultation_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

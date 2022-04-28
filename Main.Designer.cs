@@ -32,7 +32,6 @@ namespace HRIS
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.StaffToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.unitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,8 +45,7 @@ namespace HRIS
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.StaffToolStripMenuItem1,
-            this.unitToolStripMenuItem,
-            this.exitToolStripMenuItem});
+            this.unitToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(528, 28);
@@ -68,13 +66,6 @@ namespace HRIS
             this.unitToolStripMenuItem.Text = "Unit";
             this.unitToolStripMenuItem.Click += new System.EventHandler(this.unitToolStripMenuItem_Click);
             // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -83,6 +74,7 @@ namespace HRIS
             this.Controls.Add(this.menuStrip1);
             this.Name = "Main";
             this.Text = "Main";
+            this.Resize += new System.EventHandler(this.Main_Resize);
             this.Controls.SetChildIndex(this.menuStrip1, 0);
             this.Controls.SetChildIndex(this.exitTemplateButton, 0);
             this.menuStrip1.ResumeLayout(false);
@@ -97,6 +89,5 @@ namespace HRIS
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem StaffToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem unitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
     }
 }

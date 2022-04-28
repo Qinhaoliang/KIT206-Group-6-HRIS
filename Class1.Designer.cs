@@ -225,7 +225,7 @@ namespace HRIS
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 20);
             this.label2.TabIndex = 25;
-            this.label2.Text = "staff:";
+            this.label2.Text = "Staff:";
             // 
             // roomTextBox
             // 
@@ -243,7 +243,7 @@ namespace HRIS
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 20);
             this.label1.TabIndex = 23;
-            this.label1.Text = "room:";
+            this.label1.Text = "Room:";
             // 
             // startTextBox
             // 
@@ -261,7 +261,7 @@ namespace HRIS
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(69, 20);
             this.label12.TabIndex = 6;
-            this.label12.Text = "start:";
+            this.label12.Text = "Start:";
             // 
             // label8
             // 
@@ -271,7 +271,7 @@ namespace HRIS
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(59, 20);
             this.label8.TabIndex = 19;
-            this.label8.Text = "type:";
+            this.label8.Text = "Type:";
             // 
             // label7
             // 
@@ -281,7 +281,7 @@ namespace HRIS
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(79, 20);
             this.label7.TabIndex = 21;
-            this.label7.Text = "campus:";
+            this.label7.Text = "Campus:";
             // 
             // endTextBox
             // 
@@ -299,7 +299,7 @@ namespace HRIS
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(49, 20);
             this.label13.TabIndex = 7;
-            this.label13.Text = "day:";
+            this.label13.Text = "Day:";
             // 
             // label11
             // 
@@ -309,7 +309,7 @@ namespace HRIS
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(49, 20);
             this.label11.TabIndex = 5;
-            this.label11.Text = "end:";
+            this.label11.Text = "End:";
             // 
             // label9
             // 
@@ -319,7 +319,7 @@ namespace HRIS
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(109, 20);
             this.label9.TabIndex = 2;
-            this.label9.Text = "unit_code:";
+            this.label9.Text = "Unit code:";
             // 
             // Class1
             // 
@@ -331,6 +331,7 @@ namespace HRIS
             this.Name = "Class1";
             this.Text = "Class";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Resize += new System.EventHandler(this.Class1_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.classBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

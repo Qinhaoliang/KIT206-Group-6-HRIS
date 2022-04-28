@@ -11,27 +11,27 @@ namespace HRIS
     class MysqlDbHelper
     {
         /// <summary>
-        /// MySqlConnection连接对象
+        /// MySqlConnection Connection object
         /// </summary>
         private MySqlConnection connection;
         /// <summary>
-        /// 服务器地址
+        /// Server address
         /// </summary>
         private string server;
         /// <summary>
-        /// 数据库实例名称
+        /// Database instance name
         /// </summary>
         private string database;
         /// <summary>
-        /// 用户名
+        /// The user name
         /// </summary>  
         private string uid;
         /// <summary>
-        /// 密码
+        /// password
         /// </summary>
         private string password;
         /// <summary>
-        /// 端口号
+        /// The port number
         /// </summary>
         private string port;
 
@@ -41,12 +41,12 @@ namespace HRIS
         }
 
         /// <summary>
-        /// 初始化mysql连接
+        /// Initialize the mysql connection
         /// </summary>
-        /// <param name="server">服务器地址</param>
-        /// <param name="database">数据库实例</param>
-        /// <param name="uid">用户名称</param>
-        /// <param name="password">密码</param>
+        /// <param name="server">Server address</param>
+        /// <param name="database">Database instance name</param>
+        /// <param name="uid">The user name</param>
+        /// <param name="password">password</param>
         public void Initialize(string server, string database, string uid, string password)
         {
             this.server = server;
@@ -58,9 +58,9 @@ namespace HRIS
         }
 
         /// <summary>
-        /// 打开数据库连接
+        /// turn on database connection
         /// </summary>
-        /// <returns>是否成功</returns>
+        /// <returns>success or not</returns>
         public bool OpenConnection()
         {
             try
@@ -87,7 +87,7 @@ namespace HRIS
         }
 
         /// <summary>
-        /// 关闭数据库连接
+        /// turn off database connection
         /// </summary>
         /// <returns></returns>
         public bool CloseConnection()
@@ -112,9 +112,9 @@ namespace HRIS
         }
 
         /// <summary>
-        /// 构建SQL句柄
+        /// Build the SQL handle
         /// </summary>
-        /// <param name="SQL">SQL语句</param>
+        /// <param name="SQL">The SQL statement</param>
         /// <returns></returns>
         public MySqlCommand CreateCmd(string SQL)
         {
@@ -123,10 +123,10 @@ namespace HRIS
         }
 
         /// <summary>
-        ///  运行MySql语句返回 MySqlDataReader对象
+        ///  Return from running MySql statement (MySqlDataReader)
         /// </summary>
-        /// <param name="查询语句"></param>
-        /// <returns>MySqlDataReader对象</returns>
+        /// <param name="The query"></param>
+        /// <returns>MySqlDataReader object </returns>
         public MySqlDataReader GetReader(string SQL)
         {
             MySqlCommand Cmd = new MySqlCommand(SQL, connection);
@@ -144,10 +144,10 @@ namespace HRIS
 
 
         /// <summary>
-        /// 根据SQL获取DataTable数据表
+        /// Obtain the DataTable table from SQL
         /// </summary>
-        /// <param name="SQL">查询语句</param>
-        /// <param name="Table_name">返回表的表名</param>
+        /// <param name="SQL">The query</param>
+        /// <param name="Table_name">Returns the table name of the table</param>
         /// <returns></returns>
         public DataTable GetDataTable(string SQL, string Table_name)
         {
@@ -157,11 +157,11 @@ namespace HRIS
             return dt;
         }
         /// <summary>
-        /// 运行MySql语句,返回DataSet对象
+        /// Run the MySql statement to return the DataSet object
         /// </summary>
-        /// <param name="SQL">查询语句</param>
-        /// <param name="Ds">待填充的DataSet对象</param>
-        /// <param name="tablename">表名</param>
+        /// <param name="SQL">The query</param>
+        /// <param name="Ds">The DataSet object to be filled</param>
+        /// <param name="tablename">The name of the table</param>
         /// <returns></returns>
         public DataSet Get_DataSet(string SQL, DataSet Ds, string tablename)
         {
@@ -177,13 +177,13 @@ namespace HRIS
             return Ds;
         }
         /// <summary>
-        /// 运行MySql语句,返回DataSet对象，将数据进行了分页
+        /// Run MySql statement, return DataSet object, the data is paged
         /// </summary>
-        /// <param name="SQL">查询语句</param>
-        /// <param name="Ds">待填充的DataSet对象</param>
-        /// <param name="StartIndex">开始项</param>
-        /// <param name="PageSize">每页数据条数</param>
-        /// <param name="tablename">表名</param>
+        /// <param name="SQL">The query</param>
+        /// <param name="Ds">The DataSet object to be filled</param>
+        /// <param name="StartIndex">Began to study</param>
+        /// <param name="PageSize">Number of data items per page</param>
+        /// <param name="tablename">The name of the table</param>
         /// <returns></returns>
         public DataSet GetDataSet(string SQL, DataSet Ds, int StartIndex, int PageSize, string tablename)
         {
@@ -199,7 +199,7 @@ namespace HRIS
             return Ds;
         }
         /// <summary>
-        /// 添加数据
+        /// add data
         /// </summary>
         /// <param name="mySqlCommand"></param>
         public bool GetInsert(MySqlCommand mySqlCommand)
@@ -219,7 +219,7 @@ namespace HRIS
 
         }
         /// <summary>
-        /// 修改数据
+        /// edit data
         /// </summary>
         /// <param name="mySqlCommand"></param>
         public bool GetUpdate(MySqlCommand mySqlCommand)
@@ -238,7 +238,7 @@ namespace HRIS
             }
         }
         /// <summary>
-        /// 删除数据
+        /// delete data
         /// </summary>
         /// <param name="mySqlCommand"></param>
         public bool GetDelete(MySqlCommand mySqlCommand)

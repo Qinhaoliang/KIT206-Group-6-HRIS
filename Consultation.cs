@@ -17,6 +17,9 @@ namespace HRIS
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            x = this.Width;
+            y = this.Height;
+            setTag(this);
         }
 
         enum OPERATIONTYPE
@@ -80,6 +83,39 @@ namespace HRIS
             mysqlDbHelper.CloseConnection();
         }
 
+        private float x;
+        private float y;
+        private void setTag(Control cons)
+        {
+            foreach (Control con in cons.Controls)
+            {
+                con.Tag = con.Width + ";" + con.Height + ";" + con.Left + ";" + con.Top + ";" + con.Font.Size;
+                if (con.Controls.Count > 0)
+                {
+                    setTag(con);
+                }
+            }
+        }
+        private void setControls(float newx, float newy, Control cons)
+        {
+            foreach (Control con in cons.Controls)
+            {
+                if (con.Tag != null)
+                {
+                    string[] mytag = con.Tag.ToString().Split(new char[] { ';' });
+                    con.Width = Convert.ToInt32(System.Convert.ToSingle(mytag[0]) * newx);
+                    con.Height = Convert.ToInt32(System.Convert.ToSingle(mytag[1]) * newy);
+                    con.Left = Convert.ToInt32(System.Convert.ToSingle(mytag[2]) * newx);
+                    con.Top = Convert.ToInt32(System.Convert.ToSingle(mytag[3]) * newy);
+                    Single currentSize = System.Convert.ToSingle(mytag[4]) * newy;
+                    con.Font = new Font(con.Font.Name, currentSize, con.Font.Style, con.Font.Unit);
+                    if (con.Controls.Count > 0)
+                    {
+                        setControls(newx, newy, con);
+                    }
+                }
+            }
+        }
         private void EnableButtons(OPERATIONTYPE type)
         {
             switch (type)
@@ -133,7 +169,7 @@ namespace HRIS
                 int row = dataGridView1.CurrentCell.RowIndex;
                 if (dataGridView1[0, row].Value.ToString() == "")
                 {
-                    MessageBox.Show("当前选中为空行!");
+                    MessageBox.Show("Empty line currently selected!");
                 }
                 else
                 {
@@ -145,6 +181,34 @@ namespace HRIS
                     endTextBox.Text = dataGridView1[3, row].Value.ToString();
                 }
             }
+        }
+        private bool checkTime()
+        {
+            string sqlstr = string.Format("SELECT start,end FROM class where staff='" + staff_idComboBox.Text.ToString()
+                + "' and day='" + dayComboBox.Text.ToString() + "'");
+
+            DataTable dataTable = mysqlDbHelper.GetDataTable(sqlstr, "class");
+            string start = startTextBox.Text.ToString();
+            string end = endTextBox.Text.ToString();
+            DateTime dt_start = Convert.ToDateTime(start);
+            DateTime dt_end = Convert.ToDateTime(end);
+            foreach (DataRow dataRow in dataTable.Rows)
+            {
+                string start_2 = dataRow["start"].ToString();
+                string end_2 = dataRow["end"].ToString();
+                DateTime dt_start_2 = Convert.ToDateTime(start_2);
+                DateTime dt_end_2 = Convert.ToDateTime(end_2);
+
+                if (DateTime.Compare(dt_start, dt_start_2) > 0 && DateTime.Compare(dt_start, dt_end_2) < 0)
+                {
+                    return false;
+                }
+                else if (DateTime.Compare(dt_end, dt_start_2) > 0 && DateTime.Compare(dt_end, dt_end_2) < 0)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
         private void ClearTextBoxes()
         {
@@ -207,7 +271,14 @@ namespace HRIS
         {
             if (operationType == OPERATIONTYPE.Add)
             {
-                ConstructAddingString();
+                if (checkTime())
+                {
+                    ConstructAddingString();
+                }
+                else
+                {
+                    MessageBox.Show("Class time conflict!");
+                }
             }
             else
             {
@@ -222,11 +293,23 @@ namespace HRIS
             }
             else
             {
-                MessageBox.Show("Faild!");
+                MessageBox.Show("FAIL!");
             }
             mysqlDbHelper.CloseConnection();
             operationType = OPERATIONTYPE.None;
             EnableButtons(OPERATIONTYPE.Save);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Consultation_Resize(object sender, EventArgs e)
+        {
+            float newx = (this.Width) / x;
+            float newy = (this.Height) / y;
+            setControls(newx, newy, this);
         }
 
         private void delButton_Click(object sender, EventArgs e)
@@ -244,7 +327,7 @@ namespace HRIS
             }
             else
             {
-                MessageBox.Show("Faild!");
+                MessageBox.Show("FAIL!");
             }
             mysqlDbHelper.CloseConnection();
         }

@@ -16,9 +16,12 @@ namespace HRIS
         public Class1()
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterScreen;  //窗体位于屏幕中央
+            this.StartPosition = FormStartPosition.CenterScreen;  //The form is in the center of the screen
+            x = this.Width;
+            y = this.Height;
+            setTag(this);
         }
-        enum OPERATIONTYPE    //设置按钮使能
+        enum OPERATIONTYPE    //Enable the button
         {
             Add,
             Update,
@@ -31,7 +34,7 @@ namespace HRIS
         string edit_unit_code, edit_campus, edit_day, edit_start;
 
         MysqlDbHelper mysqlDbHelper = new MysqlDbHelper();
-
+        
         private const string db = "hris";
         private const string user = "kit206g20a";
         private const string pass = "group20a";
@@ -39,7 +42,7 @@ namespace HRIS
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: 这行代码将数据加载到表“testDataSet._class”中。您可以根据需要移动或删除它。
+            // TODO: This line loads the data into the table “testDataSet._class”
             //this.classTableAdapter.Fill(this.testDataSet._class);
             mysqlDbHelper.Initialize(server, db, user, pass);
             mysqlDbHelper.OpenConnection();
@@ -86,7 +89,7 @@ namespace HRIS
             reader.Close();
             list.Clear();
 
-            sqlstr = string.Format("select code from unit");   //取unit表的所有code值  因为是外键
+            sqlstr = string.Format("select code from unit");   //Get all code values from the unit table (foreign key)
             mySqlCommand = mysqlDbHelper.CreateCmd(sqlstr);
             reader = mySqlCommand.ExecuteReader();
             while (reader.Read())
@@ -155,7 +158,7 @@ namespace HRIS
                 int row = dataGridView1.CurrentCell.RowIndex;
                 if (dataGridView1[0, row].Value.ToString() == "")
                 {
-                    MessageBox.Show("当前选中为空行!");
+                    MessageBox.Show("Empty line currently selected!");
                 }
                 else
                 {
@@ -225,7 +228,7 @@ namespace HRIS
             }
             else
             {
-                MessageBox.Show("Faild!");
+                MessageBox.Show("FAIL!");
             }
             mysqlDbHelper.CloseConnection();
             operationType = OPERATIONTYPE.None;
@@ -239,13 +242,54 @@ namespace HRIS
             ClearTextBoxes();
         }
 
+        private void Class1_Resize(object sender, EventArgs e)
+        {
+            float newx = (this.Width) / x;
+            float newy = (this.Height) / y;
+            setControls(newx, newy, this);
+        }
+
+        private float x;
+        private float y;
+        private void setTag(Control cons)
+        {
+            foreach (Control con in cons.Controls)
+            {
+                con.Tag = con.Width + ";" + con.Height + ";" + con.Left + ";" + con.Top + ";" + con.Font.Size;
+                if (con.Controls.Count > 0)
+                {
+                    setTag(con);
+                }
+            }
+        }
+        private void setControls(float newx, float newy, Control cons)
+        {
+            foreach (Control con in cons.Controls)
+            {
+                if (con.Tag != null)
+                {
+                    string[] mytag = con.Tag.ToString().Split(new char[] { ';' });
+                    con.Width = Convert.ToInt32(System.Convert.ToSingle(mytag[0]) * newx);
+                    con.Height = Convert.ToInt32(System.Convert.ToSingle(mytag[1]) * newy);
+                    con.Left = Convert.ToInt32(System.Convert.ToSingle(mytag[2]) * newx);
+                    con.Top = Convert.ToInt32(System.Convert.ToSingle(mytag[3]) * newy);
+                    Single currentSize = System.Convert.ToSingle(mytag[4]) * newy;
+                    con.Font = new Font(con.Font.Name, currentSize, con.Font.Style, con.Font.Unit);
+                    if (con.Controls.Count > 0)
+                    {
+                        setControls(newx, newy, con);
+                    }
+                }
+            }
+        }
+
         string strSQLCommand;
         private void ConstructAddingString()
         {
             string strColumns = "";
             if (typeComboBox.Text.Trim() == "" && staffComboBox.Text.Trim() == "")
             {
-                strColumns = "unit_code,campus,day,start,end,room";    //构造SQL语句
+                strColumns = "unit_code,campus,day,start,end,room";    //Constructing SQL statements
                 strSQLCommand = "insert into class("
                     + strColumns + ") values ('"
                     + unit_codeComboBox.Text.Trim() + "','"

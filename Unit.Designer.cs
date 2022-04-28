@@ -31,6 +31,7 @@ namespace HRIS
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.codeTextBox = new System.Windows.Forms.TextBox();
             this.coordinatorComboBox = new System.Windows.Forms.ComboBox();
             this.cancelButton = new System.Windows.Forms.Button();
@@ -39,7 +40,6 @@ namespace HRIS
             this.titleTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -75,6 +75,17 @@ namespace HRIS
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(471, 195);
             this.panel1.TabIndex = 13;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(367, 121);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 29);
+            this.button1.TabIndex = 38;
+            this.button1.Text = "Class";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // codeTextBox
             // 
@@ -122,7 +133,7 @@ namespace HRIS
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(129, 20);
             this.label1.TabIndex = 27;
-            this.label1.Text = "coordinator:";
+            this.label1.Text = "Coordinator:";
             // 
             // titleTextBox
             // 
@@ -140,7 +151,7 @@ namespace HRIS
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(69, 20);
             this.label7.TabIndex = 21;
-            this.label7.Text = "title:";
+            this.label7.Text = "Title:";
             // 
             // label9
             // 
@@ -150,18 +161,7 @@ namespace HRIS
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(59, 20);
             this.label9.TabIndex = 2;
-            this.label9.Text = "code:";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(367, 121);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 29);
-            this.button1.TabIndex = 38;
-            this.button1.Text = "class";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.label9.Text = "Code:";
             // 
             // Unit
             // 
@@ -173,6 +173,7 @@ namespace HRIS
             this.Name = "Unit";
             this.Text = "unit";
             this.Load += new System.EventHandler(this.Unit_Load);
+            this.Resize += new System.EventHandler(this.Unit_Resize);
             this.Controls.SetChildIndex(this.exitTemplateButton, 0);
             this.Controls.SetChildIndex(this.dataGridView1, 0);
             this.Controls.SetChildIndex(this.panel1, 0);

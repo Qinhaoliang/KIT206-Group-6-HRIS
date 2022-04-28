@@ -45,7 +45,7 @@ namespace HRIS
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(127, 50);
             this.CancelButton.TabIndex = 15;
-            this.CancelButton.Text = "Cancel";
+            this.CancelButton.Text = "Exit";
             this.CancelButton.UseVisualStyleBackColor = true;
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
@@ -111,6 +111,7 @@ namespace HRIS
             // 
             // Login
             // 
+            this.AcceptButton = this.LoginButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(660, 415);
@@ -123,6 +124,7 @@ namespace HRIS
             this.Controls.Add(this.label1);
             this.Name = "Login";
             this.Text = "Login";
+            this.Resize += new System.EventHandler(this.Login_Resize);
             this.ResumeLayout(false);
             this.PerformLayout();
 
