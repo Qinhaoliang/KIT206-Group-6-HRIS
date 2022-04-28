@@ -42,8 +42,7 @@ namespace HRIS
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: This line loads the data into the table “testDataSet._class”
-            //this.classTableAdapter.Fill(this.testDataSet._class);
+            
             mysqlDbHelper.Initialize(server, db, user, pass);
             mysqlDbHelper.OpenConnection();
             UpdateDataSet();
