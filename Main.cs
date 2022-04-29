@@ -54,7 +54,6 @@ namespace HRIS
         {
             Application.Exit();
         }
-<<<<<<< HEAD
 
         private void Main_Resize(object sender, EventArgs e)
         {
@@ -95,7 +94,5 @@ namespace HRIS
                 }
             }
         }
-=======
->>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
     }
 }

@@ -65,16 +65,6 @@ namespace HRIS
             this.unitToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
             this.unitToolStripMenuItem.Text = "Unit";
             this.unitToolStripMenuItem.Click += new System.EventHandler(this.unitToolStripMenuItem_Click);
-<<<<<<< HEAD
-=======
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
->>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
             // 
             // Main
             // 
@@ -84,10 +74,7 @@ namespace HRIS
             this.Controls.Add(this.menuStrip1);
             this.Name = "Main";
             this.Text = "Main";
-<<<<<<< HEAD
             this.Resize += new System.EventHandler(this.Main_Resize);
-=======
->>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
             this.Controls.SetChildIndex(this.menuStrip1, 0);
             this.Controls.SetChildIndex(this.exitTemplateButton, 0);
             this.menuStrip1.ResumeLayout(false);

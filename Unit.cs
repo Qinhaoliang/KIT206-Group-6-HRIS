@@ -18,12 +18,9 @@ namespace HRIS
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-<<<<<<< HEAD
             x = this.Width;
             y = this.Height;
             setTag(this);
-=======
->>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
         }
 
         MysqlDbHelper mysqlDbHelper = new MysqlDbHelper();
@@ -59,11 +56,7 @@ namespace HRIS
             {
                 coordinatorComboBox.Items.Add(list[i]);
             }
-<<<<<<< HEAD
             coordinatorComboBox.SelectedIndex = 0;//The default value is 0
-=======
-            coordinatorComboBox.SelectedIndex = 0;//默认从第0项开始
->>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
 
 
             mysqlDbHelper.CloseConnection();
@@ -102,11 +95,7 @@ namespace HRIS
                 int row = dataGridView1.CurrentCell.RowIndex;
                 if (dataGridView1[0, row].Value.ToString() == "")
                 {
-<<<<<<< HEAD
                     MessageBox.Show("Empty line currently selected!");
-=======
-                    MessageBox.Show("当前选中为空行!");
->>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
                 }
                 else
                 {
@@ -130,11 +119,7 @@ namespace HRIS
             }
             else
             {
-<<<<<<< HEAD
                 MessageBox.Show("FAIL!");
-=======
-                MessageBox.Show("Faild!");
->>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
             }
             mysqlDbHelper.CloseConnection();
 
@@ -150,7 +135,6 @@ namespace HRIS
             Class1 class1 = new Class1();
             class1.ShowDialog();
         }
-<<<<<<< HEAD
 
         private void Unit_Resize(object sender, EventArgs e)
         {
@@ -191,7 +175,5 @@ namespace HRIS
                 }
             }
         }
-=======
->>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
     }
 }

@@ -31,10 +31,6 @@ namespace HRIS
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-<<<<<<< HEAD
-=======
-            this.button2 = new System.Windows.Forms.Button();
->>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
             this.campusComboBox = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
@@ -119,19 +115,6 @@ namespace HRIS
             this.panel1.Size = new System.Drawing.Size(888, 238);
             this.panel1.TabIndex = 12;
             // 
-<<<<<<< HEAD
-=======
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(199, 706);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(114, 40);
-            this.button2.TabIndex = 36;
-            this.button2.Text = "consultation";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
->>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
             // campusComboBox
             // 
             this.campusComboBox.Font = new System.Drawing.Font("宋体", 12F);
@@ -189,20 +172,12 @@ namespace HRIS
             // 
             // addButton
             // 
-<<<<<<< HEAD
             this.addButton.Location = new System.Drawing.Point(72, 201);
-=======
-            this.addButton.Location = new System.Drawing.Point(99, 201);
->>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
             this.addButton.Margin = new System.Windows.Forms.Padding(4);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(129, 29);
             this.addButton.TabIndex = 29;
-<<<<<<< HEAD
             this.addButton.Text = "Add Details";
-=======
-            this.addButton.Text = "Add";
->>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
@@ -222,11 +197,7 @@ namespace HRIS
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 20);
             this.label1.TabIndex = 27;
-<<<<<<< HEAD
             this.label1.Text = "Room:";
-=======
-            this.label1.Text = "room:";
->>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
             // 
             // label2
             // 
@@ -397,11 +368,7 @@ namespace HRIS
             this.picSelectButton.Name = "picSelectButton";
             this.picSelectButton.Size = new System.Drawing.Size(173, 29);
             this.picSelectButton.TabIndex = 24;
-<<<<<<< HEAD
             this.picSelectButton.Text = "Add Photo";
-=======
-            this.picSelectButton.Text = "Choose Photo";
->>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
             this.picSelectButton.UseVisualStyleBackColor = true;
             this.picSelectButton.Click += new System.EventHandler(this.picSelectButton_Click);
             // 
@@ -436,11 +403,7 @@ namespace HRIS
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(187, 29);
             this.searchButton.TabIndex = 3;
-<<<<<<< HEAD
             this.searchButton.Text = "Search";
-=======
-            this.searchButton.Text = "Query";
->>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
             this.searchButton.UseVisualStyleBackColor = true;
             this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
@@ -460,12 +423,8 @@ namespace HRIS
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(103, 15);
             this.label4.TabIndex = 0;
-<<<<<<< HEAD
             this.label4.Text = "Family name:";
             this.label4.Click += new System.EventHandler(this.label4_Click);
-=======
-            this.label4.Text = "family_name:";
->>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
             // 
             // label5
             // 
@@ -475,11 +434,7 @@ namespace HRIS
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(95, 15);
             this.label5.TabIndex = 0;
-<<<<<<< HEAD
             this.label5.Text = "Given name:";
-=======
-            this.label5.Text = "given_name:";
->>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
             // 
             // categoryComboBox
             // 
@@ -496,11 +451,7 @@ namespace HRIS
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(114, 40);
             this.button3.TabIndex = 37;
-<<<<<<< HEAD
             this.button3.Text = "Class";
-=======
-            this.button3.Text = "class";
->>>>>>> bace0bed41be952fa459be1bcb2ed33de4afee53
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
